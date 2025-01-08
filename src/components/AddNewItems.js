@@ -114,35 +114,36 @@ function AddNewItems() {
           onChange={(e) => setItemType(e.target.value)}
         >
           <option value="">-- Select Item Type --</option>
-          <option value="Protective_Gear">Protective Gear</option>
-          <option value="Infantry_Small_arms">Infantry Small Arms</option>
-          <option value="Shotguns">Shotguns</option>
-          <option value="Sub_Machine_Guns">Sub Machine Guns</option>
-          <option value="Assualt_Rifles">Assualt Rifles</option>
-          <option value="Sniper_Rifles">Sniper Rifles</option>
-          <option value="Anti_Material_Rifles">Anti Material Rifles</option>
-          <option value="Machine_Guns">Machine Guns</option>
-          <option value="Explosives">Explosives</option>
-          <option value="Mines">Mines</option>
-          <option value="Vehicles">Vehicles</option>
-          <option value="Miscellaneous_Vehicles">Miscellaneous Vehicles</option>
-          <option value="Armoured_Personnel_Carriers">Armoured Personnel Carriers</option>
-          <option value="Utility_and_Staff_Transport">Utility & Staff Transport</option>
-          <option value="Goods_and_Field_Transport_vehicles">Goods & Field Transport Vehicles</option>
-          <option value="Engineering_and_support_vehicles">Engineering & Support Vehicles</option>
-          <option value="Unmanned_ground_vehicle">Unmanned Ground vehicle</option>
-          <option value="Artillery">Artillery</option>
-          <option value="Towed_Artillery">Towed Artillery</option>
           <option value="Air_Defence_Systems">Air Defence Systems</option>
-          <option value="Anti_aircraft_gun_systems">Anti-Aircraft Gun Systems</option>
-          <option value="Ballistic_and_Cruise_Missiles">Ballastic & Cruise Missiles</option>
-          <option value="Radars">Radars</option>
-          <option value="Vessels">Vessels</option>
           <option value="Aircraft">Aircraft</option>
-          <option value="UAV">UAV</option>
-          <option value="Loitering_Munitions">Loitering Munitions</option>
-          <option value="medical_supplies">Medical Supplies</option>
+          <option value="Anti_Material_Rifles">Anti Material Rifles</option>
+          <option value="Anti_aircraft_gun_systems">Anti-Aircraft Gun Systems</option>
+          <option value="Armoured_Personnel_Carriers">Armoured Personnel Carriers</option>
+          <option value="Artillery">Artillery</option>
+          <option value="Assualt_Rifles">Assualt Rifles</option>
+          <option value="Ballistic_and_Cruise_Missiles">Ballastic & Cruise Missiles</option>
+          <option value="Engineering_and_support_vehicles">Engineering & Support Vehicles</option>
+          <option value="Explosives">Explosives</option>
           <option value="Fuel">Fuel</option>
+          <option value="Goods_and_Field_Transport_vehicles">Goods & Field Transport Vehicles</option>
+          <option value="Infantry_Small_arms">Infantry Small Arms</option>
+          <option value="Loitering_Munitions">Loitering Munitions</option>
+          <option value="Machine_Guns">Machine Guns</option>
+          <option value="Mines">Mines</option>
+          <option value="Miscellaneous_Vehicles">Miscellaneous Vehicles</option>
+          <option value="Protective_Gear">Protective Gear</option>
+          <option value="Radars">Radars</option>
+          <option value="Shotguns">Shotguns</option>
+          <option value="Sniper_Rifles">Sniper Rifles</option>
+          <option value="Sub_Machine_Guns">Sub Machine Guns</option>
+          <option value="Towed_Artillery">Towed Artillery</option>
+          <option value="UAV">UAV</option>
+          <option value="Unmanned_ground_vehicle">Unmanned Ground vehicle</option>
+          <option value="Utility_and_Staff_Transport">Utility & Staff Transport</option>
+          <option value="Vehicles">Vehicles</option>
+          <option value="Vessels">Vessels</option>
+          <option value="food_water">Food and water</option>
+          <option value="medical_supplies">Medical Supplies</option>
         </select>
       </div>
 

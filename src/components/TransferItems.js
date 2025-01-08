@@ -166,20 +166,20 @@ function TransferItems() {
           </div>
         )}
 
-        {/* Display Selected Item Quantity */}
-        {selectedItem && inventory[selectedCategory] && (
-          <div className="form-group">
-            <label>Quantity Available</label>
-            <p>{inventory[selectedCategory][selectedItem.split("/")[1]]}</p>
-          </div>
-        )}
-
         {/* Display Selected Item Image */}
         {itemImage && (
           <div className="form-group">
             <label>Selected Item Image</label>
             <img src={itemImage} alt="Selected Item" className="item-image" />
           </div>
+        )}
+
+        {/* Display Selected Item Quantity */}
+        {selectedItem && inventory[selectedCategory] && (
+                  <div className="form-group">
+                    <label>Quantity Available</label>
+                    <p>{inventory[selectedCategory][selectedItem.split("/")[1]]}</p>
+                  </div>
         )}
 
         {/* Select Target Base */}
