@@ -1,0 +1,85 @@
+/* App.css */
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+.Home h1 {
+  font-size: 36px;
+  color: #333;
+}
+
+.Home nav {
+  margin-top: 20px;
+}
+
+.Home nav a {
+  margin: 0 10px;
+  font-size: 18px;
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.SafeSpots,
+.Troops,
+.Supply,
+.ViewSafeSpots {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.SafeSpots input,
+.Troops input,
+.Supply input,
+.ViewSafeSpots input {
+  margin: 10px;
+  padding: 8px;
+  width: 250px;
+}
+
+.SafeSpots button,
+.Troops button,
+.Supply button,
+.ViewSafeSpots button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.SafeSpots button:hover,
+.Troops button:hover,
+.Supply button:hover,
+.ViewSafeSpots button:hover {
+  background-color: #0056b3;
+}
+/* src/App.css */
+.Home {
+  text-align: center;
+  padding: 20px;
+  background-color: #f4f4f9;
+}
+
+.Home h1 {
+  font-size: 3rem;
+}
+
+.Home nav {
+  margin-top: 20px;
+}
+
+.Home nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #007bff;
+}
+
+.Home nav a:hover {
+  text-decoration: underline;
+}
+
+.spacing {
+  margin: 0 8px; /* Adjust the margin to add space between the elements */
+}
