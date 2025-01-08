@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ref, onValue, update, get } from "firebase/database";
 import { db } from "../firebase";
 import itemImages from '../itemImages.json'; // Assuming you store image URLs here
+import './TransferItems.css'; // Assuming you have a CSS file for consistent styling
 
 function TransferItems() {
   const [bases, setBases] = useState([]);
@@ -12,6 +13,7 @@ function TransferItems() {
   const [selectedItem, setSelectedItem] = useState("");
   const [quantity, setQuantity] = useState(0);
   const [itemImage, setItemImage] = useState(""); // New state for item image
+  const [isLoading, setIsLoading] = useState(false); // Loading state for UI
 
   // Fetch all bases
   useEffect(() => {
@@ -31,11 +33,13 @@ function TransferItems() {
   // Fetch inventory of the selected source base
   useEffect(() => {
     if (sourceBase) {
+      setIsLoading(true); // Show loading indicator
       const inventoryRef = ref(db, `inventory/${sourceBase}`);
 
       const unsubscribe = onValue(inventoryRef, (snapshot) => {
         const data = snapshot.val();
         setInventory(data || {});
+        setIsLoading(false); // Hide loading indicator
       });
 
       return () => unsubscribe();
@@ -47,7 +51,7 @@ function TransferItems() {
     if (selectedItem) {
       const [category, item] = selectedItem.split("/");
       const imageURL = itemImages[category]?.[item]; // Find the image URL for the selected item
-      setItemImage(imageURL || ""); // Set the image or default to an empty string
+      setItemImage(imageURL || "/path/to/placeholder.jpg"); // Fallback to placeholder if no image found
     }
   }, [selectedItem]);
 
@@ -68,6 +72,7 @@ function TransferItems() {
     }
 
     try {
+      setIsLoading(true); // Show loading indicator
       const sourceRef = ref(db, `inventory/${sourceBase}/${itemCategory}/${itemName}`);
       const targetRef = ref(db, `inventory/${targetBase}/${itemCategory}/${itemName}`);
 
@@ -87,120 +92,138 @@ function TransferItems() {
     } catch (error) {
       console.error("Error transferring items:", error);
       alert("Failed to transfer items.");
+    } finally {
+      setIsLoading(false); // Hide loading indicator
     }
   };
 
   return (
-    <div className="TransferItems">
-      <h2>Transfer Items</h2>
+    <div className="transfer-items-container">
+      <div className="transfer-items-card">
+        <h2 className="card-title">Transfer Items</h2>
 
-      {/* Select Source Base */}
-      <div>
-        <h3>Select Source Base</h3>
-        <select
-          value={sourceBase}
-          onChange={(e) => setSourceBase(e.target.value)}
-        >
-          <option value="">Select Base</option>
-          {bases.map((base) => (
-            <option key={base.id} value={base.id}>
-              {base.name}
-            </option>
-          ))}
-        </select>
-      </div>
+        {isLoading && <div className="loading-spinner">Loading...</div>}
 
-      {/* Display Inventory Categories of Source Base */}
-      {sourceBase && (
-        <div>
-          <h3>Select Item Category</h3>
+        {/* Select Source Base */}
+        <div className="form-group">
+          <label htmlFor="sourceBase">Source Base</label>
           <select
-            value={selectedCategory}
-            onChange={(e) => {
-              const category = e.target.value;
-              setSelectedCategory(category);
-              setSelectedItem(""); // Reset selected item
-            }}
+            id="sourceBase"
+            value={sourceBase}
+            onChange={(e) => setSourceBase(e.target.value)}
+            className="form-control"
           >
-            <option value="">Select Category</option>
-            {Object.keys(inventory).map((category) => (
-              <option key={category} value={category}>
-                {category}
-              </option>
-            ))}
-          </select>
-        </div>
-      )}
-
-      {/* Display Dropdown for Specific Item Selection */}
-      {selectedCategory && (
-        <div>
-          <h3>Select Specific Item</h3>
-          <select
-            value={selectedItem}
-            onChange={(e) => setSelectedItem(e.target.value)}
-          >
-            <option value="">Select Item</option>
-            {Object.keys(inventory[selectedCategory] || {}).map((item) => (
-              <option key={item} value={`${selectedCategory}/${item}`}>
-                {item}
-              </option>
-            ))}
-          </select>
-        </div>
-      )}
-
-      {/* Display Selected Item Quantity */}
-      {selectedItem && inventory[selectedCategory] && (
-        <div>
-          <h3>Quantity Available: {inventory[selectedCategory][selectedItem.split("/")[1]]}</h3>
-        </div>
-      )}
-
-      {/* Display Selected Item Image */}
-      {itemImage && (
-        <div>
-          <h3>Selected Item Image</h3>
-          <img src={itemImage} alt="Selected Item" style={{ width: "200px" }} />
-        </div>
-      )}
-
-      {/* Select Target Base */}
-      <div>
-        <h3>Select Target Base</h3>
-        <select
-          value={targetBase}
-          onChange={(e) => setTargetBase(e.target.value)}
-        >
-          <option value="">Select Base</option>
-          {bases
-            .filter((base) => base.id !== sourceBase)
-            .map((base) => (
+            <option value="">Select Base</option>
+            {bases.map((base) => (
               <option key={base.id} value={base.id}>
                 {base.name}
               </option>
             ))}
-        </select>
-      </div>
+          </select>
+        </div>
 
-      {/* Transfer Quantity */}
-      <div>
-        <h3>Transfer Quantity</h3>
-        <input
-          type="number"
-          value={quantity}
-          min="1"
-          onChange={(e) => setQuantity(parseInt(e.target.value, 10) || 0)}
-        />
-      </div>
+        {/* Display Inventory Categories of Source Base */}
+        {sourceBase && !isLoading && (
+          <div className="form-group">
+            <label htmlFor="itemCategory">Item Category</label>
+            <select
+              id="itemCategory"
+              value={selectedCategory}
+              onChange={(e) => {
+                const category = e.target.value;
+                setSelectedCategory(category);
+                setSelectedItem(""); // Reset selected item
+              }}
+              className="form-control"
+            >
+              <option value="">Select Category</option>
+              {Object.keys(inventory).map((category) => (
+                <option key={category} value={category}>
+                  {category}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
 
-      {/* Transfer Button */}
-      <button
-        onClick={handleTransfer}
-        disabled={!sourceBase || !targetBase || !selectedItem || quantity <= 0}
-      >
-        Transfer Items
-      </button>
+        {/* Display Dropdown for Specific Item Selection */}
+        {selectedCategory && (
+          <div className="form-group">
+            <label htmlFor="selectedItem">Select Item</label>
+            <select
+              id="selectedItem"
+              value={selectedItem}
+              onChange={(e) => setSelectedItem(e.target.value)}
+              className="form-control"
+            >
+              <option value="">Select Item</option>
+              {Object.keys(inventory[selectedCategory] || {}).map((item) => (
+                <option key={item} value={`${selectedCategory}/${item}`}>
+                  {item}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
+
+        {/* Display Selected Item Quantity */}
+        {selectedItem && inventory[selectedCategory] && (
+          <div className="form-group">
+            <label>Quantity Available</label>
+            <p>{inventory[selectedCategory][selectedItem.split("/")[1]]}</p>
+          </div>
+        )}
+
+        {/* Display Selected Item Image */}
+        {itemImage && (
+          <div className="form-group">
+            <label>Selected Item Image</label>
+            <img src={itemImage} alt="Selected Item" className="item-image" />
+          </div>
+        )}
+
+        {/* Select Target Base */}
+        <div className="form-group">
+          <label htmlFor="targetBase">Target Base</label>
+          <select
+            id="targetBase"
+            value={targetBase}
+            onChange={(e) => setTargetBase(e.target.value)}
+            className="form-control"
+          >
+            <option value="">Select Base</option>
+            {bases
+              .filter((base) => base.id !== sourceBase)
+              .map((base) => (
+                <option key={base.id} value={base.id}>
+                  {base.name}
+                </option>
+              ))}
+          </select>
+        </div>
+
+        {/* Transfer Quantity */}
+        <div className="form-group">
+          <label htmlFor="quantity">Transfer Quantity</label>
+          <input
+            type="number"
+            id="quantity"
+            value={quantity}
+            min="1"
+            onChange={(e) => setQuantity(parseInt(e.target.value, 10) || 0)}
+            className="form-control"
+          />
+        </div>
+
+        {/* Transfer Button */}
+        <button
+          onClick={handleTransfer}
+          disabled={!sourceBase || !targetBase || !selectedItem || quantity <= 0}
+          className="btn-submit"
+        >
+          Transfer Items
+        </button>
+      </div>
     </div>
   );
 }

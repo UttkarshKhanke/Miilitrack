@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { ref, onValue, set } from "firebase/database"; 
-import { db } from "../firebase"; // Import your Firebase config
-import itemImages from '../itemImages.json'; // Or adjust the path accordingly
+import { db } from "../firebase"; 
+import itemImages from '../itemImages.json';
+import './AddNewItems.css'; // Path to item images JSON
 
 function AddNewItems() {
   const [bases, setBases] = useState([]); // List of bases
   const [selectedBase, setSelectedBase] = useState(""); // Selected base ID
-  const [itemType, setItemType] = useState(""); // Selected item type (e.g., guns, vehicles)
-  const [subCategory, setSubCategory] = useState(""); // Selected sub-category (e.g., assault_rifles)
+  const [itemType, setItemType] = useState(""); // Selected item type
+  const [subCategory, setSubCategory] = useState(""); // Selected sub-category
   const [quantity, setQuantity] = useState(""); // Quantity to add
   const [inventory, setInventory] = useState({}); // Inventory of the selected base
-  const [imageUrl, setImageUrl] = useState(""); // URL of the image to dis
+  const [imageUrl, setImageUrl] = useState(""); // URL of the image
 
   // Fetch the list of bases from Firebase
   useEffect(() => {
@@ -37,7 +38,7 @@ function AddNewItems() {
     const inventoryRef = ref(db, `inventory/${selectedBase}`);
     const unsubscribe = onValue(inventoryRef, (snapshot) => {
       const data = snapshot.val();
-      setInventory(data || {}); // Default to empty object if no data
+      setInventory(data || {}); 
     });
 
     return () => unsubscribe();
@@ -46,15 +47,15 @@ function AddNewItems() {
   // Update the image URL based on the selected itemType and subCategory
   useEffect(() => {
     if (!itemType) {
-      setImageUrl(""); // Reset image if no itemType is selected
+      setImageUrl(""); 
       return;
     }
- if (subCategory && itemImages[itemType]?.[subCategory]) {
-      setImageUrl(itemImages[itemType][subCategory]); // Set sub-category image
+    if (subCategory && itemImages[itemType]?.[subCategory]) {
+      setImageUrl(itemImages[itemType][subCategory]);
     } else if (itemImages[itemType]) {
-      setImageUrl(itemImages[itemType]); // Set item type image
+      setImageUrl(itemImages[itemType]);
     } else {
-      setImageUrl(""); // Reset image if no match found
+      setImageUrl("");
     }
   }, [itemType, subCategory]);
 
@@ -72,14 +73,13 @@ function AddNewItems() {
     const itemPath = `inventory/${selectedBase}/${itemType}/${subCategory}`;
     const itemRef = ref(db, itemPath);
 
-    // Calculate new quantity (existing quantity + new addition)
     const currentQuantity = inventory[itemType]?.[subCategory] || 0;
     const newQuantity = currentQuantity + quantityToAdd;
 
     try {
-      await set(itemRef, newQuantity); // Directly set the updated quantity
+      await set(itemRef, newQuantity); 
       alert(`Added ${quantityToAdd} to ${subCategory || "new sub-category"} in ${itemType}.`);
-      setQuantity(""); // Reset the quantity input
+      setQuantity(""); 
     } catch (error) {
       console.error("Error updating inventory: ", error);
       alert("Failed to add items. Please try again.");
@@ -87,11 +87,11 @@ function AddNewItems() {
   };
 
   return (
-    <div className="AddNewItems">
+    <div className="add-new-items-container">
       <h2>Add New Items to Base Inventory</h2>
 
       {/* Select Base */}
-      <div>
+      <div className="input-group">
         <label>Select Base:</label>
         <select
           value={selectedBase}
@@ -107,7 +107,7 @@ function AddNewItems() {
       </div>
 
       {/* Select Item Type */}
-      <div>
+      <div className="input-group">
         <label>Select Item Type:</label>
         <select
           value={itemType}
@@ -148,7 +148,7 @@ function AddNewItems() {
 
       {/* Select Sub-Category */}
       {itemType && (
-        <div>
+        <div className="input-group">
           <label>Select Sub-Category:</label>
           <select
             value={subCategory}
@@ -165,7 +165,7 @@ function AddNewItems() {
       )}
 
       {/* Input Quantity */}
-      <div>
+      <div className="input-group">
         <label>Quantity:</label>
         <input
           type="number"
@@ -176,11 +176,15 @@ function AddNewItems() {
       </div>
 
       {/* Add Button */}
-      <button onClick={addItem}>Add Items</button>
+      <button className="add-item-button" onClick={addItem}>
+        Add Items
+      </button>
+
+      {/* Display Image of Selected Item */}
       {imageUrl && (
-        <div>
+        <div className="item-image">
           <h3>Selected Item Image:</h3>
-          <img src={imageUrl} alt="Selected Item" style={{ maxWidth: "300px", marginTop: "20px" }} />
+          <img src={imageUrl} alt="Selected Item" />
         </div>
       )}
     </div>

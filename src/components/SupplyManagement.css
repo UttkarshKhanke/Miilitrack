@@ -1,0 +1,66 @@
+/* SupplyManagement.css */
+
+.supply-management-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  .supply-image {
+    width: 380px;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 30px; /* Add some space between image and heading */
+  }
+  
+  .heading {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  
+  .buttons-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .btn {
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    font-size: 1rem;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 200px; /* Consistent button width */
+  }
+  
+  .add-items-btn {
+    background-color: #2196F3; /* Blue for Add New Items */
+  }
+  
+  .transfer-items-btn {
+    background-color: #FF9800; /* Orange for Transfer Items */
+  }
+  
+  .btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  
+  .add-items-btn:hover {
+    background-color: #0456b9; /* Darker blue on hover */
+  }
+  
+  .transfer-items-btn:hover {
+    background-color: #de6f00; /* Darker orange on hover */
+  }
+  
