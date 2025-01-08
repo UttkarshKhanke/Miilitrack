@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ref, onValue, set } from "firebase/database"; 
 import { db } from "../firebase"; // Import your Firebase config
+import itemImages from '../itemImages.json'; // Or adjust the path accordingly
 
 function AddNewItems() {
   const [bases, setBases] = useState([]); // List of bases
@@ -9,6 +10,7 @@ function AddNewItems() {
   const [subCategory, setSubCategory] = useState(""); // Selected sub-category (e.g., assault_rifles)
   const [quantity, setQuantity] = useState(""); // Quantity to add
   const [inventory, setInventory] = useState({}); // Inventory of the selected base
+  const [imageUrl, setImageUrl] = useState(""); // URL of the image to dis
 
   // Fetch the list of bases from Firebase
   useEffect(() => {
@@ -40,6 +42,21 @@ function AddNewItems() {
 
     return () => unsubscribe();
   }, [selectedBase]);
+
+  // Update the image URL based on the selected itemType and subCategory
+  useEffect(() => {
+    if (!itemType) {
+      setImageUrl(""); // Reset image if no itemType is selected
+      return;
+    }
+ if (subCategory && itemImages[itemType]?.[subCategory]) {
+      setImageUrl(itemImages[itemType][subCategory]); // Set sub-category image
+    } else if (itemImages[itemType]) {
+      setImageUrl(itemImages[itemType]); // Set item type image
+    } else {
+      setImageUrl(""); // Reset image if no match found
+    }
+  }, [itemType, subCategory]);
 
   // Function to add new items to the selected base's inventory
   const addItem = async () => {
@@ -160,6 +177,12 @@ function AddNewItems() {
 
       {/* Add Button */}
       <button onClick={addItem}>Add Items</button>
+      {imageUrl && (
+        <div>
+          <h3>Selected Item Image:</h3>
+          <img src={imageUrl} alt="Selected Item" style={{ maxWidth: "300px", marginTop: "20px" }} />
+        </div>
+      )}
     </div>
   );
 }

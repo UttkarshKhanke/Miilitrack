@@ -1,0 +1,220 @@
+{
+    "Protective_Gear": {
+      "Vest": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Bulletproof_Vest_-_DRDO_-_Pride_of_India_-_Exhibition_-_100th_Indian_Science_Congress_-_Kolkata_2013-01-03_2577.JPG/225px-Bulletproof_Vest_-_DRDO_-_Pride_of_India_-_Exhibition_-_100th_Indian_Science_Congress_-_Kolkata_2013-01-03_2577.JPG",
+      "Helmet": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/TataBallistics_bmp.png/225px-TataBallistics_bmp.png"
+    },
+    "Infantry_Small_arms": {
+      "Knife": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Glock_Feldmesser_FM_78_noBG.jpg/255px-Glock_Feldmesser_FM_78_noBG.jpg",
+      "Glock": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/GLOCK_17_Gen_4_Pistol_MOD_45160305.jpg/225px-GLOCK_17_Gen_4_Pistol_MOD_45160305.jpg",
+      "Pistol_9mm": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/FN_Browning_High_Power_%28left_side%29.png/225px-FN_Browning_High_Power_%28left_side%29.png",
+      "Beretta_Storm": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/BerettaPX4Storm.jpg/225px-BerettaPX4Storm.jpg"
+    },
+    "Shotguns": {
+      "Bore_PAG_12": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/PEO_Mossberg_590A1.jpg/225px-PEO_Mossberg_590A1.jpg"
+    },
+    "Sub_Machine_Guns": {
+      "Micro_Uzi": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/IWI_UZI.jpg/225px-IWI_UZI.jpg",
+      "Koch_MP5": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Heckler_Koch_MP5.jpg/225px-Heckler_Koch_MP5.jpg",
+      "MP9": "data:image/webp;base64,UklGRo4IAABXRUJQVlA4IIIIAACwJgCdASocAVoAPoUooVClIaUlEvCgEIlpbvxjIW1Q1Z10/PcQCI72//sPXR2T/Hz+v9QK4v2pNnO+9/v/Sx+d8w/r95pfFJUB/0n+sPso/83+i/LH3PfS//p/zHwKfrZ6Yfs39Dz9nFaFZagFN0Ky1AKbkFI6cJ/cETboW3ExcdjUO9Xc6Ta7V0lJPu60+aVOqweSCKMiYET2Qbw0kW/6VEPclXrAed7ob2fTOWHBOlZYhnSH7l5g9V36sg/yMoAt5cxDB40oE756Cc2JJRcIyB5R0VIlbok6WrWc2v5MScPvsW/IACzsWrmiLQI3sThT7SeWsK0zrXbkevNy7eD4aK5LrGe5h3q5akVB203xsUOyqO7iHbV4LEvcOMEbxE0eFt01qOmJg45x4q2vbXqTiPXxen68p6KvYry9RwAA/vyoAAAX6B6HS1Blo/n7nCTJ09VvT/t6rd0s7cPrMpBpwUtSz5xQs59XL5qcZdACML64aWW4Aq/NWJLbYTu5/4Oop9bpS1y7J2BFW3oE6I/DgPWJ7JSw/WM5kIU6FhsL/ZYB00AaO8RAnIxWvXLVXzHgRW9xmyxAu2t3jVE/uF6Z04BAoYPm+ut3AqBI/V1BjXN1CHcuF8cvtn+P4D9k5ARWnNVvYbgakV42f403/nWuoQFp+i7XOxNit50f1JraJlOgUocu3vR3dJio8yTVesLLHSMOg+k1FeA75ox18HyD7RTbUp3pNk2O0NfcFB2uiUQX9kak43UNb7DHpAvtHdssRXOfxnoCek6C44DLbc9TqELJkKkkXXRe75szT7sLRXV4NqRvrLkTNFFwrIQ2Oywp9QzIfyd6DXpRCwJfBKzVPofmrlP8pSLDQHDiA+dPh2Xef2T1Q9FOqY/iFtX6wra/H781RIl8318+eQqp5/bMdh4LcDag/E3yexXkAhdpxW3i3Xqh0YFt2DHIXf+S2OP+6wgtndpwZCeyjAVa9PWzH9GwIgDnHwlcBoEy7cMMkSIDwZ+Vts6TRkdkiqlOtsOmvLfvfKj4+gw9UnLD920rKwKTcH8RzoOPWBBTPM2/aFl+DBHgOtuayalo63cIkOvCT7kGPA9PQ9d4dxP9LBbZ++9PkyRRKyIEZLVvqG0sL4C17e1X0LNU7TM5Y8bFnQ6kmefnneKekpXgrCbaFq4l2B3gruxDgnW2wMesT1iV63PnfBG1mrvv4W4QFWHZ4krMUKX4B2xNOVjVLzoilTumLrFGQjzQ6WvL7qKMQ4jUzBVtEMGjHcZb8jcM33vwA5yQrVtX5oA+7yWToL9goue96aCsva9af/RsPuQj9Bz+IJJZFaYCngA8SLUX8gE1IcDxcgMGwTLSxMmgqCT0tDfN8F5Zbi0lpZHOTfRmHDbd3A0m5vgLWK20lyK6b+fbckLa4Tf8JTPNskLkt+xlDH52fzUZrX+wAnzK3+aJB4H4zc6FvoX28eLKEfNja6VoyapJ6gc1Y/0RBcbouzSh2UovvC4YhoNa84QG6Pcz32mkNgP1k+zY/DxAPkb8cs+dAzHRZonnuCsQDM8OeOLbRBK+Jy/qvwM5hriM7EEbRK4FNn78nuo1YTwyXzkFGrcypaL9VW2YUlpyGP8OeOuyiVsHlmg1cZvDDR5Ks43ss2VbJzX1q1A5a3OXnvJeLXptwmNAYv095mNI2qSiD5MwY4wWwfiU9zc9VCJCcWnogphmNI+rSxwQ8YjbAjdzFGNk3ibJtycJlBaKejBRjdeVanxvkf/bN9WM1geWa+iB+7zE40llLq8lckupklhZvCEDmWDSZNxaPnJaMRTtc8DG3gqJ3zh9ZZ7y0eeDt+v465ynxR3s8xuFWzmrq2G514Jzx3oEPiurRnnDgBiNv39dgbFw8WSKFEvVEg87xZYSyYfpa+73udH/KwJb+B8mOFYOXHX73/pFCeDwN9KOa1GO4hb/yi2tqOq5doM1Wl6QIDq7UxXqZM6XVbhLsW+Q6xQGcwe/TSLAeZbNA1rqRCa98vQqGz7pUi/6y5/YHmjwjRMvBsHC9mjNhHU9gszEvjwkWnNmTI9/k8j8jWSFo9R1Tb8rlzuDxynAslFiIDbkkfCrg9u20z9NcRL/J/PhVjqDdlAcAhnyqvZuMiKyBL8EP++kya+zc8gCp5XwSB5t6x566mBfLeMC6+yUCXZuIdqWn9ZcZK9f/af/XTnLKrBHuTekxvvWyno5DR24LVVqyYVHH9nmBIY7njodYS00O/Y1VdOAx/2JdL3Zz7z9wJeKMt4aEbKB8paLlopt35VuCWgjI03+0Gr8fJkZO3PwESzsptWXeWw09KF/r+oC2z+G03N67xYpo2FWOpi2Ji4JwKMcmcKEY65Zs8mGqRDXS6eLolRsN3GgD95L6zxC9YxL+2+iZMKX/0/NNlmNXSzQlgkJpiXhqVyIzj80Og8lfTafZrNEhPQ25xXOPnO+qCDlPrCb9wuWxF4KlLy/aRmI+NAZw7eT2sgoW+liq1LVMIaiwuved/Ia237dzhOil0s3DtQJNCjK7vf1YxcsAIHuLdm6+Ovc8isUJ3sdqtCkQ3fle5ZX/erdpmyiN+RBr1I6+guajJB5ZQZ/dkYymkwLKx3PHbeh9DlLLXi/DVL/shOHEpoU9FJ+hfROJpBfoRCpVy1GvdUxtFOU7pkm5ZUQci43Zhl0pRHiHeQUAOLyxjR9pDC55njzy6y8u8QQU1RJ3gQaxAJyh+KsOD6v868jsMe+3W6ojQo9Dy2DmizWBcA+c42cgL250f3N9UvSLkQkIIZCgaedEGzYZGowdvnEPxn3GcIWXAcv3UN/b+ZOy4RRM+N0lms7IetQPH2SsYrikcoP8eJ7ShQqgnHfiYAmeuKSojuWeyqXhfSLaFpuQeBh3O8sk/07RoFNpa6K08hS+4AAAAA=",
+      "SAF_Carbine_2A1": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Sterling_SMG.JPG/225px-Sterling_SMG.JPG",
+      "ASMI": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/DRDO_ASMI.jpg/225px-DRDO_ASMI.jpg",
+      "Tauras_T9": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Jedinica_za_podr%C5%A1ku_Dan_Republike_2019.jpg/225px-Jedinica_za_podr%C5%A1ku_Dan_Republike_2019.jpg"
+    },
+    "Assualt_Rifles": {
+      "INSAS_1B1": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/INSAS_Black.JPG/225px-INSAS_Black.JPG",
+      "AK_203": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/AK200_Assault_Rifle_Army-2022_2022-08-20_2380.jpg/225px-AK200_Assault_Rifle_Army-2022_2022-08-20_2380.jpg",
+      "SIG_716i": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/SIG716i.png/225px-SIG716i.png",
+      "IWI_Tavor_X95": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/MicroTavorX95MARS-white.jpg/225px-MicroTavorX95MARS-white.jpg",
+      "M4_Carbine": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/M4_Carbine_with_M203_Grenade_Launcher.png/225px-M4_Carbine_with_M203_Grenade_Launcher.png",
+      "Ar_M1": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/BulgAR.jpg/225px-BulgAR.jpg",
+      "AKM": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Indian_Army_personnel_with_a_Mod._Ak_rifle.jpg/225px-Indian_Army_personnel_with_a_Mod._Ak_rifle.jpg",
+      "MPi_KMS_72": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/MPi_KmS_72.jpg/225px-MPi_KmS_72.jpg",
+      "Vz_58": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Sa_58-JH04.jpg/225px-Sa_58-JH04.jpg",
+      "T91": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/T91-3_%2865%29.JPG/225px-T91-3_%2865%29.JPG"
+    },
+    "Sniper_Rifles": {
+      "SVD": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/SVDM_sniper_rifle_at_Military-technical_forum_ARMY-2016_01.jpg/225px-SVDM_sniper_rifle_at_Military-technical_forum_ARMY-2016_01.jpg",
+      "IMI_Galil": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Galil-Sniper-Galatz-r001.jpg/225px-Galil-Sniper-Galatz-r001.jpg",
+      "Koch_PSG1": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/MSG_90_rifle_2014_noBG.jpg/225px-MSG_90_rifle_2014_noBG.jpg",
+      "Mauser_Sp66": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Mauser_sp66_noBG.png/225px-Mauser_sp66_noBG.png",
+      "SIG_Sauer_SSG": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/SIG_Sauer_SSG_3000.jpg/225px-SIG_Sauer_SSG_3000.jpg",
+      "Sako_TRG_42": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Sako_TRG-42_2.jpg/225px-Sako_TRG-42_2.jpg"
+    },
+    "Anti_Material_Rifles": {
+      "Barret_M82": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Barrett-M82A1-Independence-Day-2017-IZE-048-white.jpg/225px-Barrett-M82A1-Independence-Day-2017-IZE-048-white.jpg",
+      "Barret_M95": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Barrett-M95-Grass.png/225px-Barrett-M95-Grass.png",
+      "OSV_96": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/%D0%9E%D0%A1%D0%92-96_12%2C7-%D0%BC%D0%BC_%D1%81%D0%BD%D0%B0%D0%B9%D0%BF%D0%B5%D1%80%D1%81%D0%BA%D0%B0%D1%8F_%D0%B2%D0%B8%D0%BD%D1%82%D0%BE%D0%B2%D0%BA%D0%B0_-_%D0%9C%D0%90%D0%9A%D0%A1-2009_01.jpg/225px-%D0%9E%D0%A1%D0%92-96_12%2C7-%D0%BC%D0%BC_%D1%81%D0%BD%D0%B0%D0%B9%D0%BF%D0%B5%D1%80%D1%81%D0%BA%D0%B0%D1%8F_%D0%B2%D0%B8%D0%BD%D1%82%D0%BE%D0%B2%D0%BA%D0%B0_-_%D0%9C%D0%90%D0%9A%D0%A1-2009_01.jpg",
+      "Denel_NTW_20": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/NTW-20_rifle.jpg/230px-NTW-20_rifle.jpg",
+      "Vidhwansak": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Vidhwansak.jpg/225px-Vidhwansak.jpg"
+    },
+    "Machine_Guns": {
+      "FN_Minimi": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/FN_MINIMI_Standard_Right.jpg/225px-FN_MINIMI_Standard_Right.jpg",
+      "INSAS_LMG": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/INSAS-LMG.jpg/225px-INSAS-LMG.jpg",
+      "IMI_Negev_NG5": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/IWI-Negev-Zachi-Evenor-01-white.jpg/225px-IWI-Negev-Zachi-Evenor-01-white.jpg",
+      "MG_6A": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/FN_MAG_white_background.jpg/225px-FN_MAG_white_background.jpg",
+      "MK48": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Mk_48_PEO_Soldier.jpg/225px-Mk_48_PEO_Soldier.jpg",
+      "PK": "https://upload.wikimedia.org/wikipedia/commons/0/0e/7%2C62_KK_PKM_Helsinki_2012_no_background.JPG",
+      "NSV": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/NSV_machine_gun-04.jpg/225px-NSV_machine_gun-04.jpg",
+      "M2": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/PEO_Browning_M2E2_QCB_%28c1%29.jpg/225px-PEO_Browning_M2E2_QCB_%28c1%29.jpg"
+    },
+    "Explosives": {
+      "Rifle_grenade": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/N%C2%B023_MkII-Version_Fusil.jpg/255px-N%C2%B023_MkII-Version_Fusil.jpg",
+      "Shivalik": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/DM51_Transportkoffer.JPG/225px-DM51_Transportkoffer.JPG",
+      "ARDE40mm": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/40MM_UBGL.jpg/225px-40MM_UBGL.jpg",
+      "MGL40mm": "data:image/jpeg;base64,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",
+      "AGS_30": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/AGS-30_maks2009.jpg/225px-AGS-30_maks2009.jpg",
+      "RCL_M2": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Carl_Gustav_M3_Kokonaisturvallisuus_2015_noBG.png/225px-Carl_Gustav_M3_Kokonaisturvallisuus_2015_noBG.png",
+      "B_300_Shipon": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Shoulder-launched_Multipurpose_Assault_Weapon.jpg/525px-Shoulder-launched_Multipurpose_Assault_Weapon.jpg",
+      "RPO_A": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/RPO-A_missile_and_launcher.jpg/225px-RPO-A_missile_and_launcher.jpg",
+      "C90mm_Mortar": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/81mmMORT_L16.png/225px-81mmMORT_L16.png"
+    },
+    "Mines": {
+      "NMM_14": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/M14_%28Mine%29.jpg/330px-M14_%28Mine%29.jpg",
+      "Nipun": "https://organiser.org/wp-content/uploads/2021/12/Hnet.com-image_4_SMj0YrV.jpg",
+      "Ulka": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/VS50.jpg/330px-VS50.jpg",
+      "Parth": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9t7aUl9DC2GmEE2BvSwlaxr31RXzH2JtnBA&s",
+      "Prachand": "https://www.shutterstock.com/image-photo/tm62-soviet-antitank-mine-isolated-260nw-2185237387.jpg",
+      "Vibhav": "https://i0.wp.com/iadnews.in/wp-content/uploads/2021/12/landmines-india.jpg?fit=640%2C360&ssl=1",
+      "Vishal": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Anti-tank_mines._%2849203108558%29.jpg/2560px-Anti-tank_mines._%2849203108558%29.jpg"
+    },
+    "Vehicles": {
+      "Arjun": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Arjun_MK1A_field_trials.jpg/225px-Arjun_MK1A_field_trials.jpg",
+      "T90S_Bhishma": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/T-90_Bhisma_cropped.jpg/225px-T-90_Bhisma_cropped.jpg",
+      "T72_Ajeya": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/T-72_Ajeya1.jpg/225px-T-72_Ajeya1.jpg",
+      "Zorawar_LT": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Zorawar_Light_Tank.jpg",
+      "BMP_2_Sarath": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Indian_Army_BMP-2.jpg/225px-Indian_Army_BMP-2.jpg"
+    },
+    "Miscellaneous_Vehicles": {
+      "Carrier_Mortar_Tracked": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/The_Carrier_Mortar_Tracked_Vehicle_gliding_down_the_Rajpath_during_the_Republic_Day_Parade_-_2006%2C_in_New_Delhi_on_January_26%2C_2006.jpg/225px-The_Carrier_Mortar_Tracked_Vehicle_gliding_down_the_Rajpath_during_the_Republic_Day_Parade_-_2006%2C_in_New_Delhi_on_January_26%2C_2006.jpg",
+      "DRDO_Armoured_Ambulance": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Armoured_Ambulance_Tracked_Vehicle_passes_through_the_Rajpath_during_the_full_dress_rehearsal_for_the_Republic_Day_Parade-2013%2C_in_New_Delhi_on_January_23%2C_2013.jpg/225px-thumbnail.jpg"
+    },
+    "Armoured_Personnel_Carriers": {
+      "Kalyani_M4": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Kalyani_M4_army_vehicle.jpg/225px-Kalyani_M4_army_vehicle.jpg",
+      "Casspir": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Mechem_Casspir_Mk_II_%289686200019%29.jpg/225px-Mechem_Casspir_Mk_II_%289686200019%29.jpg",
+      "OFB_Aditya": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Vehicle_Factory_Jabalpur_%28VFJ%29%27s_Mine_Protected_Vehicle.jpg/225px-Vehicle_Factory_Jabalpur_%28VFJ%29%27s_Mine_Protected_Vehicle.jpg",
+      "Mahindra_Armado": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Mahindra_Armado_Side_view.jpg/225px-Mahindra_Armado_Side_view.jpg",
+      "Mahindra_Rakshak": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Rakshak.JPG/225px-Rakshak.JPG"
+    },
+    "Utility_and_Staff_Transport": {
+      "Tata_Safari_Storme": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Indian_Army_Tata_Safari_Storm.jpg/225px-Indian_Army_Tata_Safari_Storm.jpg",
+      "Mahindra_Scorpio": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Indian_army_mahindra_scorpio.jpg/225px-Indian_army_mahindra_scorpio.jpg",
+      "Maruti_Suzuki_Gypsy": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Maruti_Gypsy_Green.JPG/225px-Maruti_Gypsy_Green.JPG",
+      "JSW_Defense": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Sherpn1200.jpg/225px-Sherpn1200.jpg"
+    },
+    "Goods_and_Field_Transport_vehicles": {
+      "Ashok_Leyland_4x4_Ambulance": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/INDIAN_ARMY_ASHOK_LEYLAND_4x4_AMBULANCE.jpg/225px-INDIAN_ARMY_ASHOK_LEYLAND_4x4_AMBULANCE.jpg",
+      "Tata_LPTA_713_TC": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/2.5_ton_%282%29.jpg/225px-2.5_ton_%282%29.jpg",
+      "Tata_LPTA_2038_HMV": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/INDIAN_ARMY_TATA_LPTA_2038C.jpg/225px-INDIAN_ARMY_TATA_LPTA_2038C.jpg",
+      "Ashok_Leyland_Stallion": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Vehicle_Factory_Jabalpur_%28VFJ%29%27s_Stallion_Truck_for_the_Indian_Army.jpg/225px-Vehicle_Factory_Jabalpur_%28VFJ%29%27s_Stallion_Truck_for_the_Indian_Army.jpg",
+      "BEML_Tatra": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Tatra_815_8x8_NVA.jpg/225px-Tatra_815_8x8_NVA.jpg",
+      "Scania_SBA111": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/ART.200015.jpg/224px-ART.200015.jpg"
+    },
+    "Engineering_and_support_vehicles": {
+      "WZT_3M": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/POL_Warsaw_WZT-3.jpg/225px-POL_Warsaw_WZT-3.jpg",
+      "WZT_2": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Polish_WZT-2.jpg/225px-Polish_WZT-2.jpg",
+      "AERV": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/The_AERV_passing_through_the_Rajpath_during_the_full_dress_rehearsal_for_Republic_Day_Parade_-_2005%2C_in_New_Delhi_on_January_23%2C_2005.jpg/225px-The_AERV_passing_through_the_Rajpath_during_the_full_dress_rehearsal_for_Republic_Day_Parade_-_2005%2C_in_New_Delhi_on_January_23%2C_2005.jpg",
+      "Hydrema": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/The_Hydrema_Demining_Vehicle_gliding_down_the_Rajpath_during_the_Republic_Day_Parade_-_2006%2C_in_New_Delhi_on_January_26%2C_2006_%281%29.jpg/225px-The_Hydrema_Demining_Vehicle_gliding_down_the_Rajpath_during_the_Republic_Day_Parade_-_2006%2C_in_New_Delhi_on_January_26%2C_2006_%281%29.jpg",
+      "DRDO_Sarvatra": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/15_Metre_Sarvatra_Bridging_System_passes_through_the_Rajpath_during_the_full_dress_rehearsal_for_the_Republic_Day_Parade-2013%2C_in_New_Delhi_on_January_23%2C_2013.jpg/225px-thumbnail.jpg"
+    },
+    "Unmanned_ground_vehicle": {
+      "DRDO_Daksh": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Daksh.JPG/225px-Daksh.JPG",
+      "Vision_60_robotic_MULE": "data:image/jpeg;base64,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/U/Fblez3m/+Yz7eO9/H73PczGImGiIiAiIgIiICIiAiIgIiICIiAiIgbuFSzuar9/6zXkyW1VsRY/y/K487SANrIbne17dN5r8ytJGrUPr2oCj6fUCS178/1uaRlE9bnyr27e0zw4tR9usyrdweLm55CY8Tlsn91+/6/Ey8SyFdk/l+4J5Ueh7fNkc5Hc2b6dPjpz9pqpGMREypERAREQLLhHRFINm+dKTe9dN6kAoRYvYGwKbrV8wBz9+s0PmYMaUkH79K51tLHxXIhf0ZcmVSoJZ1KNrNgqQWa6oHVfX7y2z0iFERIoJY8Nh0ozGrrmeQ/fX8usr1at99garvW03rxbaVGql3sekgk77mifaanrUrzPxBej1PP23IofcX+XvNEyYCgQK59K7TGSqRESBERAREQEREBERAREQEREBERAREQMXQGSsXG5FxNgDsMTEMy9CRVEnntQ2utpHiSyX2suElcG3QEgnfYWduwkWYZRt8bzURnm4ggkeqyRWwW+9Farp36zJmuufLqb/UzZwnH5Ex5EVyFyUrjqwINgnn1M0ybbpkhERAREQEREBERAREQPCL2m/wziTgfUoRtiunIodKNfyna/8AMzTElksyrLl16zE855ESoREQEREBERAREQERED//2Q==",
+      "ATT": "https://pbs.twimg.com/media/GNb7ZTMW0AAW6K-.jpg"
+    },
+    "Artillery": {
+      "Pinaka_MBRL": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Pinaka_MBRL_at_rehearsal_of_Republic_Day_Parade_2011.jpg/225px-Pinaka_MBRL_at_rehearsal_of_Republic_Day_Parade_2011.jpg",
+      "BM_21": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Russian_BM-21_Grad_in_Saint_Petersburg.JPG/225px-Russian_BM-21_Grad_in_Saint_Petersburg.JPG",
+      "Smerch_9K58_MBRL": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Smerch_30MM_hemant_rawat_%2811%29.jpg/225px-Smerch_30MM_hemant_rawat_%2811%29.jpg"
+    },
+    "Towed_Artillery": {
+      "M_46": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/M-46_Lutsk.jpg/225px-M-46_Lutsk.jpg",
+      "OFB_Indian_Field_Gun": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Indian_Field_Gun.jpg/230px-Indian_Field_Gun.jpg",
+      "OFB_Dhanush": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Indian_Army_Aviation_Corps_and_Air_Defence_Arty_Joint_Display_Ex_2.jpg/225px-Indian_Army_Aviation_Corps_and_Air_Defence_Arty_Joint_Display_Ex_2.jpg",
+      "ATAGS": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/ATAGS.jpg/225px-ATAGS.jpg",
+      "TGS": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/T-55_%28Russian-built_tank%29.jpg/225px-T-55_%28Russian-built_tank%29.jpg"
+    },
+    "Air_Defence_Systems": {
+      "Akashteer": "https://d18x2uyjeekruj.cloudfront.net/wp-content/uploads/2023/06/akashteer.jpg",
+      "Barak_8_MR_SAM": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Medium_Range_Surface_to_Air_Missile_successfully_test_launched_on_December_23%2C_2020.jpg/225px-Medium_Range_Surface_to_Air_Missile_successfully_test_launched_on_December_23%2C_2020.jpg",
+      "Akash": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Akash_Prime_%281%29.jpg/225px-Akash_Prime_%281%29.jpg",
+      "SPYDER": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/IAF_SPYDER.jpg/225px-IAF_SPYDER.jpg",
+      "QRSAM": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Quick_Reaction_Surface_to_Air_Missile_%28QRSAM%29_system_launch_from_Integrated_Test_Range_%28ITR%29_Chandipur_off_the_Odisha_coast.jpg/225px-Quick_Reaction_Surface_to_Air_Missile_%28QRSAM%29_system_launch_from_Integrated_Test_Range_%28ITR%29_Chandipur_off_the_Odisha_coast.jpg"
+    },
+    "Anti_aircraft_gun_systems": {
+      "ZSU_23_4M_Shilka": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Upgraded_Schilka_Weapon_system_passes_through_the_Rajpath%2C_at_the_72nd_Republic_Day_Celebrations%2C_in_New_Delhi_on_January_26%2C_2021.jpg/225px-Upgraded_Schilka_Weapon_system_passes_through_the_Rajpath%2C_at_the_72nd_Republic_Day_Celebrations%2C_in_New_Delhi_on_January_26%2C_2021.jpg",
+      "T_2K22_Tunguska": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/The_Tangushka_Mount_System_gliding_down_the_Rajpath_during_the_Republic_Day_Parade_-_2006%2C_in_New_Delhi_on_January_26%2C_2006.jpg/225px-The_Tangushka_Mount_System_gliding_down_the_Rajpath_during_the_Republic_Day_Parade_-_2006%2C_in_New_Delhi_on_January_26%2C_2006.jpg",
+      "Bofors_L_70": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Indian_Army_Upgraded_Bofors_L70_Gun.jpg/211px-Indian_Army_Upgraded_Bofors_L70_Gun.jpg",
+      "Sudarshan_CIWS": "https://i0.wp.com/armyrecognition.com/images/stories/news/2022/november/China_introduces_its_LD-3000_Close-In_Weapon_Station_similar_to_US_C-RAM_Centurion_Phalanx_925_001.jpg?resize=750%2C400&ssl=1"
+    },
+    "Ballistic_and_Cruise_Missiles": {
+      "BrahMos": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Brahmos_launcher_Republic_day.jpg/225px-Brahmos_launcher_Republic_day.jpg",
+      "Nirbhay": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Nirbhay_missiles_during_Republic_Day_Parade_2018.jpg/222px-Nirbhay_missiles_during_Republic_Day_Parade_2018.jpg",
+      "Prahaar": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Prahaar_missile_india.jpg",
+      "Pralay": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Launch_of_indigenously_developed_surface-to-surface_missile_Pralay_%28cropped%29.jpg/225px-Launch_of_indigenously_developed_surface-to-surface_missile_Pralay_%28cropped%29.jpg",
+      "Prithvi_II": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Prithvi-II_missile_launch_on_11_March_2011_%28cropped%29.jpg/225px-Prithvi-II_missile_launch_on_11_March_2011_%28cropped%29.jpg",
+      "Shaurya": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/%27Shourya%27_missile_test_fired_on_November_12%2C_2008.jpg/225px-%27Shourya%27_missile_test_fired_on_November_12%2C_2008.jpg",
+      "Agni_V": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Agni-V_missile_during_rehearsal_of_Republic_Day_Parade_2013.jpg/225px-Agni-V_missile_during_rehearsal_of_Republic_Day_Parade_2013.jpg"
+    },
+    "Radars": {
+      "ADTCR": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/DRDO_ADTCR.jpg/225px-DRDO_ADTCR.jpg",
+      "ADFCR": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Q-37_%28V%29_Firefinder_Radar.jpg/225px-Q-37_%28V%29_Firefinder_Radar.jpg",
+      "SWLR": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Weapon_Locating_Radar_%28Swathi%29_passes_through_the_Rajpath_during_the_full_dress_rehearsal_for_the_Republic_Day_Parade-2018%2C_in_New_Delhi_on_January_23%2C_2018.jpg/225px-Weapon_Locating_Radar_%28Swathi%29_passes_through_the_Rajpath_during_the_full_dress_rehearsal_for_the_Republic_Day_Parade-2018%2C_in_New_Delhi_on_January_23%2C_2018.jpg",
+      "Ashwini": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Ashwini_radar_during_Republic_Day_Parade_2018.jpg/225px-Ashwini_radar_during_Republic_Day_Parade_2018.jpg",
+      "Bharani": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Bharani_radar.jpg/225px-Bharani_radar.jpg",
+      "Rajendra": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Rajendra_Radar_during_Republic_Day_2019.jpg/225px-Rajendra_Radar_during_Republic_Day_2019.jpg",
+      "Rohini": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Rohini_radar.jpg/225px-Rohini_radar.jpg"
+    },
+    "Vessels": {
+      "GSL_Patrol_Boat": "https://pbs.twimg.com/media/E8qZBV3VIAQVRSR.jpg",
+      "Flat_Bottomed_Troop_Boat": "https://img.etimg.com/thumb/width-600,height-450,msid-93600845,imgsize-12402/watch-indian-army-showcases-capability-of-landing-craft-assault-deployed-in-pangong-lake.jpg",
+      "Tempest_35_Swat": "https://pbs.twimg.com/media/FxtTjjYWIAEf6xc?format=jpg&name=large"
+    },
+    "Aircraft": {
+      "Boeing_AH_64_Apache": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Apache_at_Air_Force_Day_Parade%2C_at_Air_Force_Station_Hindan%2C_in_Ghaziabad_%28cropped%29.jpg/225px-Apache_at_Air_Force_Day_Parade%2C_at_Air_Force_Station_Hindan%2C_in_Ghaziabad_%28cropped%29.jpg",
+      "HAL_Prachand": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/IA_LCH_induction1.jpg/225px-IA_LCH_induction1.jpg",
+      "HAL_Rudra": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Advanced_Light_Helicopter_ALH_Rudra_%28cropped%29.jpg/225px-Advanced_Light_Helicopter_ALH_Rudra_%28cropped%29.jpg",
+      "HAL_Dhruv": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/IA_Dhruv_Berlin-08.jpg/225px-IA_Dhruv_Berlin-08.jpg",
+      "HAL_Chetak": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Indian_army_CHetak_helicopter.jpg/225px-Indian_army_CHetak_helicopter.jpg",
+      "HAL_Cheetah": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Indian_Army%27s_HAL_Cheetah_at_Leh_cropped.JPG/225px-Indian_Army%27s_HAL_Cheetah_at_Leh_cropped.JPG"
+    },
+    "UAV": {
+      "IAI_Heron_TP": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/IAF-Eitan--Independence-Day-2017-Tel-Nof-IZE-099.jpg/225px-IAF-Eitan--Independence-Day-2017-Tel-Nof-IZE-099.jpg",
+      "Adani_Drishti_10_Starliner": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Elbit_Systems_900_take_off.jpg/231px-Elbit_Systems_900_take_off.jpg",
+      "General_Atomics_MQ_9": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/MQ-9_Reaper_UAV_%28cropped%29.jpg/236px-MQ-9_Reaper_UAV_%28cropped%29.jpg",
+      "NewSpace_BELUGA": "https://newspace.co.in/wp-content/uploads/2023/07/Group-41.png",
+      "Raphe_mPhibr_MR_20": "https://blogger.googleusercontent.com/img/a/AVvXsEiTvMHuQL6_1eYTpATxxJrZojBgvUei3lAaufCxVO83RH8QnRVydnuYK7cVZ82bf4tiPgLCb7nbTeLSefVM07eC7JQlPqKSlwILqEYfy6_Q2L_1-HZ58UOsF90JzWwf3tayeSxs4wlqcU3lSvHwcr2I2m85A09B-l5S3lWaZyNaDlUr_suQew1_DOpxBQ=s16000",
+      "Hoverbee": "https://zuludefence.tech/wp-content/uploads/2024/02/hover_main_edit.png"
+    },
+    "Loitering_Munitions": {
+      "Solar_Nagastra": "https://bsmedia.business-standard.com/_media/bs/img/article/2024-06/14/full/1718385826-5856.jpg?im=FeatureCrop,size=(826,465)",
+      "Rafael_Firefly": "https://www.edrmagazine.eu/wp-content/uploads/2020/05/SPIKE-FIREFLY-1.jpg",
+      "Elbit_Skystriker": "https://elbitsystems.com/media/SkyStriker-Middle-banner.jpg",
+      "DRAP": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/WB_Electronics_Warmate_R%2C_Kyiv_2021%2C_02.jpg/225px-WB_Electronics_Warmate_R%2C_Kyiv_2021%2C_02.jpg",
+      "ALS_50": "https://www.jagranimages.com/images/newimg/24092022/24_09_2022-als_50_drone_system_23095349.jpg"
+    },
+    "medical_supplies": {
+      "bandages": "https://5.imimg.com/data5/SELLER/Default/2021/2/ZK/RJ/PS/44653852/israeli-bandage-upload-500x500.jpg",
+      "first_aid_kits": "https://oliveplanet.in/cdn/shop/files/olive_planet_rip_away_emt_pouch_olive_green_side_angle_480x.jpg?v=1718800848",
+      "painkillers": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwVdF1q-F3qN8Smyup8CRd3oOMLBEoyRMxiVWByno47RSmkwh4GyLX2Ivgovx_V0KWLOU&usqp=CAU",
+      "NBC_suits": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxbkJYjmcO53-w5Wi01Grbnnp8--Dbz_FWqA&s",
+      "Respiratory_masks": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaWM-TY00lxysS_dgNWjEp2IvOQ2pgKIg5cw&s",
+      "Water_Poison_Detection_Kits": "https://www.drdo.gov.in/drdo/sites/default/files/product-images/Water%20Poison%20Detection%20Kit.jpg",
+      "Anukool": "https://pbs.twimg.com/media/E0ybD2hVkAMWvr9.jpg",
+      "Defibrillators": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5RzHuoVnTT5h5RSRREsHFeITquQpMQDUu3g&s",
+      "Anesthesia_system": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfVymIyzAs5pKCOjML0t3xyhueOvW3Lbum3Q&s",
+      "Ventilators": "https://i.guim.co.uk/img/media/60bba82aaeedb75bb5d1d50e51f5e64283ae491a/0_325_4879_2928/master/4879.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=0efc31f82c2f34c94c9c7b54f20cb2b2",
+      "Suction_apparatus": "https://5.imimg.com/data5/SELLER/Default/2022/4/TM/SD/CD/4619069/suction-apparatus-electric.jpg",
+      "pulse_oximeters": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQCXaCBX80Qo4tvnCoqtncxjYf5bFfSG43jw&s"
+    },
+    "food_water": {
+      "food": "https://www.drdo.gov.in/drdo/sites/default/files/product-images/Emergency_Survival__Ration-min.jpg",
+      "water": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZHmhQZRPqEGWccgnN9f7HNd15rgUZwiJKkg&s"
+    },
+    "Fuel": {
+      "Winter_Diesel": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-YTTEHRbwa4vuUDd4tB6kJr5vilNUdDTl-Q&s",
+      "DHPP": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1WXdBbXI0DdTtjI9hLmL4MOnM_7pJYx0fcw&s",
+      "Aviation_Turbine_Fuel": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ05PAK1tjLnaLDKvQ7lVmMKvy5C498sJnKQ&s",
+      "Bio_Jet_fuel": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9Teyu9ze9hmfApLDXHVoi2tILrTGdQ0IC_w&s"
+    }
+  }
+  

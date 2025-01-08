@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { ref, onValue, update, get } from "firebase/database";
 import { db } from "../firebase";
+import itemImages from '../itemImages.json'; // Assuming you store image URLs here
 
 function TransferItems() {
   const [bases, setBases] = useState([]);
   const [sourceBase, setSourceBase] = useState("");
   const [targetBase, setTargetBase] = useState("");
   const [inventory, setInventory] = useState({});
+  const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedItem, setSelectedItem] = useState("");
   const [quantity, setQuantity] = useState(0);
+  const [itemImage, setItemImage] = useState(""); // New state for item image
 
   // Fetch all bases
   useEffect(() => {
@@ -38,6 +41,15 @@ function TransferItems() {
       return () => unsubscribe();
     }
   }, [sourceBase]);
+
+  // Update item image when item is selected
+  useEffect(() => {
+    if (selectedItem) {
+      const [category, item] = selectedItem.split("/");
+      const imageURL = itemImages[category]?.[item]; // Find the image URL for the selected item
+      setItemImage(imageURL || ""); // Set the image or default to an empty string
+    }
+  }, [selectedItem]);
 
   const handleTransfer = async () => {
     if (!sourceBase || !targetBase || !selectedItem || quantity <= 0) {
@@ -98,33 +110,58 @@ function TransferItems() {
         </select>
       </div>
 
-      {/* Display Inventory of Source Base */}
+      {/* Display Inventory Categories of Source Base */}
       {sourceBase && (
         <div>
-          <h3>Source Base Inventory</h3>
-          {Object.keys(inventory).length > 0 ? (
-            <ul>
-              {Object.keys(inventory).map((category) => (
-                <li key={category}>
-                  <b>{category}</b>
-                  <ul>
-                    {Object.keys(inventory[category]).map((item) => (
-                      <li key={item}>
-                        {item}: {inventory[category][item]}
-                        <button
-                          onClick={() => setSelectedItem(`${category}/${item}`)}
-                        >
-                          Select
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p>No inventory available.</p>
-          )}
+          <h3>Select Item Category</h3>
+          <select
+            value={selectedCategory}
+            onChange={(e) => {
+              const category = e.target.value;
+              setSelectedCategory(category);
+              setSelectedItem(""); // Reset selected item
+            }}
+          >
+            <option value="">Select Category</option>
+            {Object.keys(inventory).map((category) => (
+              <option key={category} value={category}>
+                {category}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
+
+      {/* Display Dropdown for Specific Item Selection */}
+      {selectedCategory && (
+        <div>
+          <h3>Select Specific Item</h3>
+          <select
+            value={selectedItem}
+            onChange={(e) => setSelectedItem(e.target.value)}
+          >
+            <option value="">Select Item</option>
+            {Object.keys(inventory[selectedCategory] || {}).map((item) => (
+              <option key={item} value={`${selectedCategory}/${item}`}>
+                {item}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
+
+      {/* Display Selected Item Quantity */}
+      {selectedItem && inventory[selectedCategory] && (
+        <div>
+          <h3>Quantity Available: {inventory[selectedCategory][selectedItem.split("/")[1]]}</h3>
+        </div>
+      )}
+
+      {/* Display Selected Item Image */}
+      {itemImage && (
+        <div>
+          <h3>Selected Item Image</h3>
+          <img src={itemImage} alt="Selected Item" style={{ width: "200px" }} />
         </div>
       )}
 
