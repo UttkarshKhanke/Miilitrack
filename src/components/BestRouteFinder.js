@@ -8,7 +8,7 @@ function BestRouteFinder() {
   const [safeSpots, setSafeSpots] = useState([]);
   const [connections, setConnections] = useState({});
   const [route, setRoute] = useState([]);
-  const [error, setError] = useState(null);
+  const [error] = useState(null);
 
   // Fetch safe spots and connections from Firebase
   useEffect(() => {

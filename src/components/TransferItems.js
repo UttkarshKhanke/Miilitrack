@@ -73,7 +73,7 @@ function TransferItems() {
 
     try {
       setIsLoading(true); // Show loading indicator
-      const sourceRef = ref(db, `inventory/${sourceBase}/${itemCategory}/${itemName}`);
+      // const sourceRef = ref(db, `inventory/${sourceBase}/${itemCategory}/${itemName}`);
       const targetRef = ref(db, `inventory/${targetBase}/${itemCategory}/${itemName}`);
 
       // Calculate new quantities

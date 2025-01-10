@@ -23,42 +23,55 @@ const GeoLocationMonitoring = () => {
   const [safeSpots, setSafeSpots] = useState([]);
   const [nearestBase, setNearestBase] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [tracking, setTracking] = useState(false); // State to control location tracking
 
   // Fetch safe spots from Firebase
   useEffect(() => {
     const safeSpotsRef = ref(db, "safe_spots");
 
-    const unsubscribe = onValue(safeSpotsRef, (snapshot) => {
-      const data = snapshot.val();
-      const spots = data
-        ? Object.keys(data).map((key) => ({
-            id: key,
-            name: data[key].name,
-            latitude: data[key].latitude,
-            longitude: data[key].longitude,
-          }))
-        : [];
-      setSafeSpots(spots);
-      setLoading(false);
-    });
+    const unsubscribe = onValue(
+      safeSpotsRef,
+      (snapshot) => {
+        const data = snapshot.val();
+        const spots = data
+          ? Object.keys(data).map((key) => ({
+              id: key,
+              name: data[key].name,
+              latitude: data[key].latitude,
+              longitude: data[key].longitude,
+            }))
+          : [];
+        setSafeSpots(spots);
+        setLoading(false);
+      },
+      (error) => {
+        console.error("Error fetching safe spots:", error);
+        setLoading(false);
+      }
+    );
 
     return () => unsubscribe(); // Clean up on unmount
   }, []);
 
-  // Function to get current location and track it in real-time
-  const startLocationTracking = () => {
+  // Function to start/stop location tracking
+  const toggleLocationTracking = () => {
     if (navigator.geolocation) {
-      navigator.geolocation.watchPosition(
-        (position) => {
-          const { latitude, longitude } = position.coords;
-          setCurrentLocation({ latitude, longitude });
-        },
-        (error) => {
-          console.error(error);
-          alert("Error fetching geolocation.");
-        },
-        { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 }
-      );
+      if (!tracking) {
+        navigator.geolocation.watchPosition(
+          (position) => {
+            const { latitude, longitude } = position.coords;
+            setCurrentLocation({ latitude, longitude });
+          },
+          (error) => {
+            console.error(error);
+            alert("Error fetching geolocation.");
+          },
+          { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 }
+        );
+        setTracking(true);
+      } else {
+        setTracking(false);
+      }
     } else {
       alert("Geolocation not supported by this browser.");
     }
@@ -88,30 +101,32 @@ const GeoLocationMonitoring = () => {
     }
   };
 
-  useEffect(() => {
-    startLocationTracking(); // Start geolocation tracking on mount
-  }, []);
-
   // Recalculate nearest base whenever the location updates
   useEffect(() => {
-    if (currentLocation) {
+    if (currentLocation && safeSpots.length > 0) {
       findNearestBase();
     }
-  }, [currentLocation]);
+  }, [currentLocation, safeSpots]);
 
   return (
     <div className="GeoLocationMonitoring">
       <h2>GeoLocation Monitoring</h2>
 
+      {/* Start/Stop Location Tracking */}
+      <button onClick={toggleLocationTracking}>
+        {tracking ? "Stop Tracking" : "Start Tracking"}
+      </button>
+
       {/* Show current location */}
       {currentLocation ? (
         <div>
           <p>
-            <strong>Current Location:</strong> Latitude: {currentLocation.latitude}, Longitude: {currentLocation.longitude}
+            <strong>Current Location:</strong> Latitude: {currentLocation.latitude}, Longitude:{" "}
+            {currentLocation.longitude}
           </p>
         </div>
       ) : (
-        <p>Loading current location...</p>
+        <p>Waiting for current location...</p>
       )}
 
       {/* Show nearest base */}
@@ -119,12 +134,16 @@ const GeoLocationMonitoring = () => {
         <div>
           <h3>Nearest Base:</h3>
           <p>
-            <strong>{nearestBase.name}</strong> (Latitude: {nearestBase.latitude}, Longitude: {nearestBase.longitude})
+            <strong>{nearestBase.name}</strong> (Latitude: {nearestBase.latitude}, Longitude:{" "}
+            {nearestBase.longitude})
           </p>
         </div>
       ) : (
-        <p>No nearest base available.</p>
+        !loading && <p>No nearest base available.</p>
       )}
+
+      {/* Show loading state */}
+      {loading && <p>Loading safe spots...</p>}
 
       {/* Optionally, you can display the list of all safe spots */}
       <h3>All Safe Spots:</h3>
