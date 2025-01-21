@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { db } from "../firebase"; // Import your Firebase configuration
 import { ref, onValue } from "firebase/database";
 
+// Haversine formula to calculate distance between two lat/long points
 const calculateDistance = (lat1, lon1, lat2, lon2) => {
   const R = 6371; // Radius of the Earth in kilometers
   const dLat = (lat2 - lat1) * (Math.PI / 180);
@@ -13,7 +14,7 @@ const calculateDistance = (lat1, lon1, lat2, lon2) => {
       Math.sin(dLon / 2) *
       Math.sin(dLon / 2);
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  return R * c;
+  return R * c; // Distance in kilometers
 };
 
 const GeoLocationMonitoring = () => {
@@ -23,7 +24,9 @@ const GeoLocationMonitoring = () => {
   const [loading, setLoading] = useState(true);
   const [tracking, setTracking] = useState(false);
   const [watchId, setWatchId] = useState(null);
+  const [distanceToNearestBase, setDistanceToNearestBase] = useState(null); // Distance state
 
+  // Fetch safe spots from Firebase
   useEffect(() => {
     const safeSpotsRef = ref(db, "safe_spots");
 
@@ -97,6 +100,7 @@ const GeoLocationMonitoring = () => {
       });
 
       setNearestBase(nearest);
+      setDistanceToNearestBase(minDistance); // Set the distance to nearest base
     }
   }, [currentLocation, safeSpots]);
 
@@ -127,6 +131,11 @@ const GeoLocationMonitoring = () => {
             <strong>{nearestBase.name}</strong> (Latitude: {nearestBase.latitude}, Longitude:{" "}
             {nearestBase.longitude})
           </p>
+          {distanceToNearestBase !== null && (
+            <p>
+              <strong>Distance to Nearest Base:</strong> {distanceToNearestBase.toFixed(2)} km
+            </p>
+          )}
         </div>
       ) : (
         !loading && <p>No nearby base found.</p>
