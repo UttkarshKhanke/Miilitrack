@@ -62,7 +62,8 @@ function BestRouteFinder() {
 
     const queue = [[startLocation]]; // Queue of paths, each path is an array of nodes
     const visited = new Set();
-    let totalDistance = 0;
+    const distanceMap = {}; // To store distances between nodes
+    let totalDist = 0;
 
     while (queue.length > 0) {
       const path = queue.shift();
@@ -70,7 +71,28 @@ function BestRouteFinder() {
 
       if (node === endLocation) {
         setRoute(path);
-        setTotalDistance(totalDistance); // Set the total distance when the route is found
+
+        // After finding the route, calculate total distance from distanceMap
+        totalDist = path.reduce((accum, curr, index) => {
+          if (index === path.length - 1) return accum; // Skip last node
+          const nextNode = path[index + 1];
+          const currentNodeData = safeSpots.find(
+            (spot) => spot.name === curr
+          );
+          const nextNodeData = safeSpots.find((spot) => spot.name === nextNode);
+          if (currentNodeData && nextNodeData) {
+            const distance = calculateDistance(
+              currentNodeData.latitude,
+              currentNodeData.longitude,
+              nextNodeData.latitude,
+              nextNodeData.longitude
+            );
+            return accum + distance;
+          }
+          return accum;
+        }, 0);
+
+        setTotalDistance(totalDist); // Update total distance after the route is found
         return;
       }
 
@@ -79,23 +101,8 @@ function BestRouteFinder() {
         const neighbors = connections[node] || [];
 
         neighbors.forEach((neighbor) => {
-          const neighborData = safeSpots.find((spot) => spot.name === neighbor);
-          const currentNodeData = safeSpots.find(
-            (spot) => spot.name === node
-          );
-
-          if (neighborData && currentNodeData) {
-            const distance = calculateDistance(
-              currentNodeData.latitude,
-              currentNodeData.longitude,
-              neighborData.latitude,
-              neighborData.longitude
-            );
-            totalDistance += distance;
-
-            const newPath = [...path, neighbor];
-            queue.push(newPath);
-          }
+          const newPath = [...path, neighbor];
+          queue.push(newPath);
         });
       }
     }
