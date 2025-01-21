@@ -14,6 +14,12 @@ function SupplyManagement() {
       <h1 className="heading">Supply Management</h1>
 
       <div className="buttons-container">
+      <button
+          className="btn view-items-btn"
+          onClick={() => navigate("/view-items")}
+        >
+          View Items
+        </button>
         <button
           className="btn add-items-btn"
           onClick={() => navigate("/add-new-items")}

@@ -7,8 +7,11 @@
     "firebase": "^11.1.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-force-graph": "^1.46.0",
+    "react-force-graph-2d": "^1.27.0",
     "react-router-dom": "^7.1.1",
     "react-scripts": "5.0.1",
+    "vis-network": "^9.1.9",
     "web-vitals": "^4.2.4"
   },
   "scripts": {

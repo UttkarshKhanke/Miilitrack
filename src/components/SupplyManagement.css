@@ -12,8 +12,8 @@
   }
   
   .supply-image {
-    width: 380px;
-    height: 380px;
+    width: 350px;
+    height: 350px;
     object-fit: cover;
     border-radius: 50%;
     margin-bottom: 30px; /* Add some space between image and heading */

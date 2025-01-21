@@ -9,7 +9,7 @@ function Home() {
       <div className="home-image-container">
         <img src={homeimage} alt="Militrack" className="homeimage" />
       </div>
-      <h1 className="home-title">Welcome to Militrack</h1>
+      <h1 className="home-title">Welcome to Miilitrack</h1>
 
       {/* Home Navigation Buttons (all in the same line on large screens, stacked on smaller screens) */}
       <div className="home-buttons">

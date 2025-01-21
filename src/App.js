@@ -10,6 +10,7 @@ import GeoLocationMonitoring from "./components/GeoLocationMonitoring"; // Place
 import TroopsMonitoring from "./components/TroopsMonitoring"; // Placeholder component
 import AddNewItems from "./components/AddNewItems"; // AddNewItems component
 import TransferItems from "./components/TransferItems"; // TransferItems component
+import ViewItems from "./components/ViewItems"; //ViewItems component
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/TroopsMonitoring" element={<TroopsMonitoring />} />
           
           {/* Add the new routes for AddNewItems and TransferItems */}
+          <Route path="/view-items" element={<ViewItems />} />
           <Route path="/add-new-items" element={<AddNewItems />} />
           <Route path="/transfer-items" element={<TransferItems />} />
         </Routes>
