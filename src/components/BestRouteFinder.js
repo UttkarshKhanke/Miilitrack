@@ -62,7 +62,6 @@ function BestRouteFinder() {
 
     const queue = [[startLocation]]; // Queue of paths, each path is an array of nodes
     const visited = new Set();
-    const distanceMap = {}; // To store distances between nodes
     let totalDist = 0;
 
     while (queue.length > 0) {
