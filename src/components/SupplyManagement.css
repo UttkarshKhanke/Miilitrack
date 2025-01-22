@@ -1,66 +1,114 @@
-/* SupplyManagement.css */
-
+/* General Styles */
 .supply-management-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #f4f4f9;
-    font-family: Arial, sans-serif;
-    padding: 20px;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f4f4f9;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+/* Image Styling */
+.supply-image {
+  width: 250px; /* Reduced size for better responsiveness */
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px; /* Adjust spacing for smaller screens */
+}
+
+/* Heading Styling */
+.heading {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+  word-wrap: break-word; /* Ensure heading text wraps on smaller screens */
+}
+
+/* Buttons Container */
+.buttons-container {
+  display: flex;
+  gap: 15px; /* Adjust gap for smaller screens */
+  justify-content: center;
+  flex-wrap: wrap; /* Allow buttons to wrap for narrow screens */
+}
+
+/* Button Styles */
+.btn {
+  background-color: #4CAF50; /* Green background */
+  color: white;
+  font-size: 1rem;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 180px; /* Adjusted width for consistent scaling */
+  text-align: center;
+}
+
+.add-items-btn {
+  background-color: #2196F3; /* Blue for Add New Items */
+}
+
+.transfer-items-btn {
+  background-color: #FF9800; /* Orange for Transfer Items */
+}
+
+.btn:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.add-items-btn:hover {
+  background-color: #0456b9; /* Darker blue on hover */
+}
+
+.transfer-items-btn:hover {
+  background-color: #de6f00; /* Darker orange on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .supply-image {
-    width: 350px;
-    height: 350px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 30px; /* Add some space between image and heading */
+      width: 200px; /* Reduce image size on tablets */
+      height: 200px;
   }
-  
+
   .heading {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 40px;
-    text-align: center;
+      font-size: 1.5rem; /* Smaller heading for tablets */
   }
-  
+
   .buttons-container {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
+      gap: 10px; /* Reduce gap for better fit */
   }
-  
+
   .btn {
-    background-color: #4CAF50; /* Green background */
-    color: white;
-    font-size: 1rem;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 200px; /* Consistent button width */
+      width: 150px; /* Smaller button width for tablets */
+      padding: 10px 20px;
+      font-size: 0.9rem; /* Adjust font size for readability */
   }
-  
-  .add-items-btn {
-    background-color: #2196F3; /* Blue for Add New Items */
+}
+
+@media (max-width: 480px) {
+  .supply-image {
+      width: 150px; /* Further reduce image size for small screens */
+      height: 150px;
   }
-  
-  .transfer-items-btn {
-    background-color: #FF9800; /* Orange for Transfer Items */
+
+  .heading {
+      font-size: 1.2rem; /* Adjust heading size for mobile */
   }
-  
-  .btn:hover {
-    background-color: #45a049; /* Darker green on hover */
+
+  .buttons-container {
+      gap: 8px; /* Further reduce gap for compact layout */
   }
-  
-  .add-items-btn:hover {
-    background-color: #0456b9; /* Darker blue on hover */
+
+  .btn {
+      width: 130px; /* Compact button size for small screens */
+      padding: 8px 16px;
+      font-size: 0.8rem;
   }
-  
-  .transfer-items-btn:hover {
-    background-color: #de6f00; /* Darker orange on hover */
-  }
-  
+}

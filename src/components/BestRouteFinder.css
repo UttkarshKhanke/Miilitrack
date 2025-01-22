@@ -1,0 +1,65 @@
+.best-route-finder {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  .title {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .dropdown {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .find-route-btn {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .find-route-btn:hover {
+    background-color: #2980b9;
+  }
+  
+  .route-title,
+  .distance h3 {
+    margin-top: 20px;
+    color: #34495e;
+  }
+  
+  .route {
+    font-size: 16px;
+    color: #27ae60;
+    font-weight: bold;
+  }
+  
+  .no-route {
+    color: #e74c3c;
+  }
+  
+  .distance {
+    margin-top: 10px;
+    color: #34495e;
+  }
+  

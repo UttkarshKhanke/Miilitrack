@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ref, push, remove, set, onValue } from "firebase/database"; 
 import { db } from "../firebase"; 
+import './SafeSpots.css';
 
 function SafeSpots() {
   const [spot, setSpot] = useState("");
@@ -350,74 +351,72 @@ const addSafeSpot = async () => {
   }
 
   return (
-    <div className="SafeSpots">
+    <div className="safe-spots">
       <h2>Safe Spots</h2>
 
       {/* Display current safe spots */}
       <h3>Current Safe Spots:</h3>
       <ul>
-        {safeSpots.length > 0 ? (
-          safeSpots.map((spot) => (
-            <li key={spot.id}>
-              <b>{spot.name}</b> | <b>Latitude:</b> {spot.latitude} | <b>Longitude:</b> {spot.longitude}
-              <button onClick={() => removeSafeSpot(spot.id)}>Remove</button>
-            </li>
-          ))
-        ) : (
-          <p>No safe spots available</p>
-        )}
-      </ul>
+  {safeSpots.length > 0 ? (
+    safeSpots.map((spot) => (
+      <li key={spot.id}>
+        <b>{spot.name}</b><b>Latitude:</b> {spot.latitude}<b>Longitude:</b> {spot.longitude}
+        <button className="remove-button" onClick={() => removeSafeSpot(spot.id)}>Remove</button>
+      </li>
+    ))
+  ) : (
+    <p>No safe spots available</p>
+  )}
+</ul>
 
-      {/* Add Safe Spot Form */}
-      <h3>Add Safe Spot:</h3>
-      <input
-        type="text"
-        placeholder="Safe Spot Name"
-        value={spot}
-        onChange={(e) => setSpot(e.target.value)}
-      />
-      <input
-        type="number"
-        placeholder="Latitude"
-        value={lat}
-        onChange={(e) => setLat(e.target.value)}
-      />
-      <input
-        type="number"
-        placeholder="Longitude"
-        value={lng}
-        onChange={(e) => setLng(e.target.value)}
-      />
-      <button onClick={addSafeSpot}>Add Safe Spot</button>
+<h3>Add Safe Spot:</h3>
+<input
+  type="text"
+  placeholder="Safe Spot Name"
+  value={spot}
+  onChange={(e) => setSpot(e.target.value)}
+/>
+<input
+  type="number"
+  placeholder="Latitude"
+  value={lat}
+  onChange={(e) => setLat(e.target.value)}
+/>
+<input
+  type="number"
+  placeholder="Longitude"
+  value={lng}
+  onChange={(e) => setLng(e.target.value)}
+/>
+<button className="add-spot-button" onClick={addSafeSpot}>Add Safe Spot</button>
 
-      {/* Add Connection Form */}
-      <h3>Add Connection Between Bases:</h3>
-      <select 
-        value={selectedSpot} 
-        onChange={(e) => setSelectedSpot(e.target.value)}
-      >
-        <option value="">Select a Base</option>
-        {safeSpots.map((spot) => (
-          <option key={spot.id} value={spot.name}>
-            {spot.name}
-          </option>
-        ))}
-      </select>
+<h3>Add Connection Between Bases:</h3>
+<select 
+  value={selectedSpot} 
+  onChange={(e) => setSelectedSpot(e.target.value)}
+>
+  <option value="">Select a Base</option>
+  {safeSpots.map((spot) => (
+    <option key={spot.id} value={spot.name}>
+      {spot.name}
+    </option>
+  ))}
+</select>
 
-      <select 
-        value={connectionBase} 
-        onChange={(e) => setConnectionBase(e.target.value)}
-      >
-        <option value="">Select a Base to Connect</option>
-        {safeSpots
-          .filter((spot) => spot.name !== selectedSpot)
-          .map((spot) => (
-            <option key={spot.id} value={spot.name}>
-              {spot.name}
-            </option>
-          ))}
-      </select>
-      <button onClick={addConnection}>Add Connection</button>
+<select 
+  value={connectionBase} 
+  onChange={(e) => setConnectionBase(e.target.value)}
+>
+  <option value="">Select a Base to Connect</option>
+  {safeSpots
+    .filter((spot) => spot.name !== selectedSpot)
+    .map((spot) => (
+      <option key={spot.id} value={spot.name}>
+        {spot.name}
+      </option>
+    ))}
+</select>
+<button className="add-connection-button" onClick={addConnection}>Add Connection</button>
 
       {/* Display Current Connections */}
       <h3>Current Connections:</h3>
@@ -430,10 +429,7 @@ const addSafeSpot = async () => {
                 {connections[base].map((connectedBase, index) => (
                   <li key={index}>
                     {connectedBase}
-                    <button 
-                      onClick={() => removeConnection(base, connectedBase)}>
-                      Remove
-                    </button>
+                    <button onClick={() => removeConnection(base, connectedBase)}>Remove</button>
                   </li>
                 ))}
               </ul>
@@ -445,6 +441,6 @@ const addSafeSpot = async () => {
       </ul>
     </div>
   );
-}
+};
 
 export default SafeSpots;

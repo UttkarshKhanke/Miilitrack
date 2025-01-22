@@ -1,21 +1,138 @@
 .safe-spots {
-    padding: 20px;
+  background-color: #f4f7f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.safe-spots h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.safe-spots h3 {
+  font-size: 1.8rem;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.safe-spots ul {
+  list-style: none;
+  padding: 0;
+}
+
+.safe-spots ul li {
+  background-color: #fff;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.safe-spots input,
+.safe-spots select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.safe-spots button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.safe-spots button:focus {
+  outline: none;
+}
+
+.safe-spots button + button {
+  margin-left: 10px;
+}
+
+.safe-spots .error-message {
+  color: red;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .safe-spots {
+    padding: 15px;
   }
-  
+
   .safe-spots h2 {
-    text-align: center;
-    color: #333;
+    font-size: 2rem;
   }
-  
-  .safe-spots p {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #555;
+
+  .safe-spots h3 {
+    font-size: 1.6rem;
   }
-  
-  div[ref="networkRef"] {
-    margin: 0 auto;
-    max-width: 800px;
-    height: 500px;
+
+  .safe-spots input,
+  .safe-spots select,
+  .safe-spots button {
+    width: 100%;
   }
-  
+}
+
+.safe-spots b {
+  margin-right: 3px; /* Adjusted for balanced spacing */
+}
+
+/* Remove button styles */
+.remove-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.remove-button:hover {
+  background-color: #660303;
+}
+
+/* Add Connection button styles */
+.add-connection-button {
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-connection-button:hover {
+  background-color: darkblue;
+}
+
+/* Add Spot button styles */
+.add-spot-button {
+  background-color: rgb(10, 217, 10);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-spot-button:hover {
+  background-color: darkgreen;
+}

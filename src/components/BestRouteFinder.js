@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { ref, onValue } from "firebase/database";
 import { db } from "../firebase";
+import "./BestRouteFinder.css";
 
-// Haversine formula to calculate distance between two lat/long points
 const calculateDistance = (lat1, lon1, lat2, lon2) => {
   const R = 6371; // Radius of the Earth in kilometers
   const dLat = (lat2 - lat1) * (Math.PI / 180);
@@ -25,9 +25,7 @@ function BestRouteFinder() {
   const [connections, setConnections] = useState({});
   const [route, setRoute] = useState([]);
   const [totalDistance, setTotalDistance] = useState(0);
-  const [error] = useState(null);
 
-  // Fetch safe spots and connections from Firebase
   useEffect(() => {
     const safeSpotsRef = ref(db, "safe_spots");
     const unsubscribeSpots = onValue(safeSpotsRef, (snapshot) => {
@@ -55,12 +53,11 @@ function BestRouteFinder() {
     };
   }, []);
 
-  // Function to find the best route using a basic breadth-first search (BFS) algorithm
   const findRoute = () => {
     if (!startLocation || !endLocation)
       return alert("Please select both start and end locations.");
 
-    const queue = [[startLocation]]; // Queue of paths, each path is an array of nodes
+    const queue = [[startLocation]];
     const visited = new Set();
     let totalDist = 0;
 
@@ -71,9 +68,8 @@ function BestRouteFinder() {
       if (node === endLocation) {
         setRoute(path);
 
-        // After finding the route, calculate total distance from distanceMap
         totalDist = path.reduce((accum, curr, index) => {
-          if (index === path.length - 1) return accum; // Skip last node
+          if (index === path.length - 1) return accum;
           const nextNode = path[index + 1];
           const currentNodeData = safeSpots.find(
             (spot) => spot.name === curr
@@ -91,14 +87,13 @@ function BestRouteFinder() {
           return accum;
         }, 0);
 
-        setTotalDistance(totalDist); // Update total distance after the route is found
+        setTotalDistance(totalDist);
         return;
       }
 
       if (!visited.has(node)) {
         visited.add(node);
         const neighbors = connections[node] || [];
-
         neighbors.forEach((neighbor) => {
           const newPath = [...path, neighbor];
           queue.push(newPath);
@@ -106,24 +101,24 @@ function BestRouteFinder() {
       }
     }
 
-    setRoute([]); // No route found
-    setTotalDistance(0); // Reset distance if no route found
+    setRoute([]);
+    setTotalDistance(0);
     alert("No route found between the selected locations.");
   };
 
-  // Function to format the route with arrows
   const formatRouteWithArrows = (route) => {
     return route.join(" → ");
   };
 
   return (
-    <div className="BestRouteFinder">
-      <h2>Best Route Finder</h2>
+    <div className="best-route-finder">
+      <h2 className="title">Best Route Finder</h2>
 
-      {/* Dropdown to select start and end locations */}
-      <div>
-        <label>Start Location: </label>
+      <div className="form-group">
+        <label htmlFor="start-location">Start Location:</label>
         <select
+          id="start-location"
+          className="dropdown"
           value={startLocation}
           onChange={(e) => setStartLocation(e.target.value)}
         >
@@ -136,9 +131,11 @@ function BestRouteFinder() {
         </select>
       </div>
 
-      <div>
-        <label>End Location: </label>
+      <div className="form-group">
+        <label htmlFor="end-location">End Location:</label>
         <select
+          id="end-location"
+          className="dropdown"
           value={endLocation}
           onChange={(e) => setEndLocation(e.target.value)}
         >
@@ -151,27 +148,23 @@ function BestRouteFinder() {
         </select>
       </div>
 
-      {/* Button to find the best route */}
-      <button onClick={findRoute}>Find Best Route</button>
+      <button className="find-route-btn" onClick={findRoute}>
+        Find Best Route
+      </button>
 
-      {/* Display route */}
-      <h3>Best Route:</h3>
+      <h3 className="route-title">Best Route:</h3>
       {route.length > 0 ? (
-        <p>{formatRouteWithArrows(route)}</p>
+        <p className="route">{formatRouteWithArrows(route)}</p>
       ) : (
-        <p>No route found</p>
+        <p className="no-route">No route found</p>
       )}
 
-      {/* Display total distance */}
       {totalDistance > 0 && (
-        <div>
-          <h3>Total Distance: </h3>
+        <div className="distance">
+          <h3>Total Distance:</h3>
           <p>{totalDistance.toFixed(2)} km</p>
         </div>
       )}
-
-      {/* Display error */}
-      {error && <div>Error: {error}</div>}
     </div>
   );
 }
