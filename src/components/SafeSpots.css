@@ -136,3 +136,8 @@
 .add-spot-button:hover {
   background-color: darkgreen;
 }
+
+.remove-connection-button{
+  background-color: red;
+  color: whitesmoke;
+}

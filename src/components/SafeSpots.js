@@ -429,7 +429,7 @@ const addSafeSpot = async () => {
                 {connections[base].map((connectedBase, index) => (
                   <li key={index}>
                     {connectedBase}
-                    <button onClick={() => removeConnection(base, connectedBase)}>Remove</button>
+                    <button className="remove-button" onClick={() => removeConnection(base, connectedBase)}>Remove</button>
                   </li>
                 ))}
               </ul>
