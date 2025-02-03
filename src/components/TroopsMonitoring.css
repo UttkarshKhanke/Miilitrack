@@ -1,0 +1,195 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    background-color: #f4f7fc;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .App {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 1100px;
+    box-sizing: border-box;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  /* Form Layout */
+  input,
+  select,
+  button {
+    font-size: 1rem;
+    padding: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  input[type="number"],
+  input[type="text"] {
+    width: 80%;
+    display: inline-block;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Form Container Styling */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  form > div {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  form > div > input,
+  form > div > select {
+    width: 100%;
+  }
+  
+  form > div > button {
+    width: 100%;
+  }
+  
+  /* List Container Styling */
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 20px;
+  }
+  
+  li {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  li button {
+    background-color: #e74c3c;
+    border: none;
+    padding: 8px 15px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  li button:hover {
+    background-color: #c0392b;
+  }
+  
+  li strong {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  li span {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Responsive Media Queries */
+  @media (max-width: 768px) {
+    .App {
+      padding: 15px;
+    }
+  
+    h2 {
+      font-size: 1.8rem;
+    }
+  
+    h3 {
+      font-size: 1.4rem;
+    }
+  
+    form > div {
+      flex-direction: column;
+    }
+  
+    form > div > input,
+    form > div > select {
+      width: 100%;
+    }
+  
+    form > div > button {
+      width: 100%;
+    }
+  
+    li {
+      font-size: 0.9rem;
+    }
+  
+    button {
+      width: 100%;
+      padding: 12px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .App {
+      padding: 10px;
+    }
+  
+    h2 {
+      font-size: 1.6rem;
+    }
+  
+    h3 {
+      font-size: 1.3rem;
+    }
+  
+    input,
+    select,
+    button {
+      font-size: 0.9rem;
+    }
+  
+    li {
+      font-size: 0.85rem;
+    }
+  
+    button {
+      padding: 12px;
+    }
+  }
+  
+  

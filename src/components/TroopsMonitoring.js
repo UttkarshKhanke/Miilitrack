@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { db } from "../firebase"; // Firebase config import
 import { ref, push, set, onValue, update, remove } from "firebase/database"; // Firebase Realtime Database imports
+import './TroopsMonitoring.css';
+
 
 const TroopsMonitoring = () => {
   const [troops, setTroops] = useState([]); // State to store list of troops
