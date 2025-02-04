@@ -1,37 +1,47 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import "./App.css";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "./components/AuthContext";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Navbar from "./components/Navbar";
+import Login from "./components/login";
 import Home from "./components/Home";
 import SafeSpots from "./components/SafeSpots";
-import BestRouteFinder from "./components/BestRouteFinder"; // Placeholder component
-import SupplyManagement from "./components/SupplyManagement"; // Placeholder component
-import GeoLocationMonitoring from "./components/GeoLocationMonitoring"; // Placeholder component
-import TroopsMonitoring from "./components/TroopsMonitoring"; // Placeholder component
-import AddNewItems from "./components/AddNewItems"; // AddNewItems component
-import TransferItems from "./components/TransferItems"; // TransferItems component
-import ViewItems from "./components/ViewItems"; //ViewItems component
+import BestRouteFinder from "./components/BestRouteFinder";
+import GeoLocationMonitoring from "./components/GeoLocationMonitoring";
+import TroopsMonitoring from "./components/TroopsMonitoring";
+import SupplyManagement from "./components/SupplyManagement";
+import AddNewItems from "./components/AddNewItems";
+import ViewItems from "./components/ViewItems";
+import TransferItems from "./components/TransferItems"
 
-function App() {
+const App = () => {
   return (
-    <Router>
-      <div className="App">
+    <AuthProvider>
+      <Router>
+        <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/SafeSpots" element={<SafeSpots />} />
-          <Route path="/BestRouteFinder" element={<BestRouteFinder />} />
-          <Route path="/SupplyManagement" element={<SupplyManagement />} />
-          <Route path="/GeoLocationMonitoring" element={<GeoLocationMonitoring />} />
-          <Route path="/TroopsMonitoring" element={<TroopsMonitoring />} />
-          
-          {/* Add the new routes for AddNewItems and TransferItems */}
-          <Route path="/view-items" element={<ViewItems />} />
-          <Route path="/add-new-items" element={<AddNewItems />} />
-          <Route path="/transfer-items" element={<TransferItems />} />
+          {/* Public Route (Login Page) */}
+          <Route path="/login" element={<Login />} />
+
+          {/* Protected Routes (Requires Authentication) */}
+          <Route element={<ProtectedRoute />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/SafeSpots" element={<SafeSpots />} />
+            <Route path="/BestRouteFinder" element={<BestRouteFinder />} />
+            <Route path="/GeoLocationMonitoring" element={<GeoLocationMonitoring />} />
+            <Route path="/TroopsMonitoring" element={<TroopsMonitoring />} />
+            <Route path="/SupplyManagement" element={<SupplyManagement />} />
+            <Route path="/add-new-items" element={<AddNewItems />} />
+            <Route path="/view-items" element={<ViewItems />} />
+            <Route path="/transfer-items" element={<TransferItems />} />
+          </Route>
+
+          {/* Redirect unknown routes to home */}
+          <Route path="*" element={<Home />} />
         </Routes>
-      </div>
-    </Router>
+      </Router>
+    </AuthProvider>
   );
-}
+};
 
 export default App;
