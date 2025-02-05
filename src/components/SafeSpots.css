@@ -45,14 +45,18 @@
   font-size: 1rem;
 }
 
+/* General button styling */
 .safe-spots button {
-  padding: 8px 12px;
+  width: auto;  /* Allows button to adjust to content size */
+  padding: 5px 10px; /* Adjusted padding for better spacing */
+  font-size: 1rem;
   border: none;
   border-radius: 5px;
-  font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  white-space: nowrap; /* Prevents text from wrapping inside the button */
 }
+
 
 .safe-spots button:focus {
   outline: none;
@@ -96,9 +100,9 @@
 .remove-button {
   background-color: red;
   color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
+  padding: 6px 10px; /* Adjusted size */
+  font-size: 1rem; /* Matches text size */
+  border-radius: 3px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -111,8 +115,8 @@
 .add-connection-button {
   background-color: blue;
   color: white;
-  border: none;
-  padding: 8px 12px;
+  padding: 6px 10px; /* Adjusted size */
+  font-size: 1rem; /* Matches text size */
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -126,8 +130,8 @@
 .add-spot-button {
   background-color: rgb(10, 217, 10);
   color: white;
-  border: none;
-  padding: 8px 12px;
+  padding: 6px 10px; /* Adjusted size */
+  font-size: 1rem; /* Matches text size */
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;

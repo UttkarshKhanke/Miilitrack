@@ -360,7 +360,7 @@ const addSafeSpot = async () => {
   {safeSpots.length > 0 ? (
     safeSpots.map((spot) => (
       <li key={spot.id}>
-        <b>{spot.name}</b><b>Latitude:</b> {spot.latitude}<b>Longitude:</b> {spot.longitude}
+        <b>{spot.name}</b>{"=>"}<b>&nbsp;Latitude:</b> {spot.latitude}<b>,&nbsp; Longitude:</b> {spot.longitude}&nbsp;
         <button className="remove-button" onClick={() => removeSafeSpot(spot.id)}>Remove</button>
       </li>
     ))
@@ -388,6 +388,7 @@ const addSafeSpot = async () => {
   value={lng}
   onChange={(e) => setLng(e.target.value)}
 />
+<br></br>
 <button className="add-spot-button" onClick={addSafeSpot}>Add Safe Spot</button>
 
 <h3>Add Connection Between Bases:</h3>
@@ -415,7 +416,7 @@ const addSafeSpot = async () => {
         {spot.name}
       </option>
     ))}
-</select>
+</select><br></br>
 <button className="add-connection-button" onClick={addConnection}>Add Connection</button>
 
       {/* Display Current Connections */}
@@ -428,7 +429,7 @@ const addSafeSpot = async () => {
               <ul>
                 {connections[base].map((connectedBase, index) => (
                   <li key={index}>
-                    {connectedBase}
+                    {connectedBase}&nbsp; &nbsp;
                     <button className="remove-button" onClick={() => removeConnection(base, connectedBase)}>Remove</button>
                   </li>
                 ))}
