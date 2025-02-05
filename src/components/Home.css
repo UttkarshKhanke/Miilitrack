@@ -7,32 +7,6 @@
   background-color: #f4f4f4;
 }
 
-.home-image-container {
-  width: 100%;
-  max-width: 300px;
-  margin-bottom: 20px;
-  /* Add a 3D rotation animation */
-  animation: rotate3DLogo 4s linear infinite;
-  perspective: 1000px; /* Add perspective to enhance the 3D effect */
-}
-
-.homeimage {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  transform-style: preserve-3d; /* Ensure the image maintains 3D properties */
-}
-
-/* Keyframe animation for 3D rotation around the Y-axis */
-@keyframes rotate3DLogo {
-  0% {
-    transform: rotateY(0deg);
-  }
-  100% {
-    transform: rotateY(360deg);
-  }
-}
-
 /* Title Styling */
 .home-title {
   font-size: 2rem;
@@ -74,10 +48,6 @@
 
 /* Tablet view and smaller */
 @media (max-width: 768px) {
-  /* Stop rotating the image on smaller screens */
-  .home-image-container {
-    animation: none; /* Disable the 3D rotation on mobile */
-  }
 
   .home-title {
     font-size: 1.5rem;
