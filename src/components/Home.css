@@ -33,13 +33,15 @@
   }
 }
 
+/* Title Styling */
 .home-title {
   font-size: 2rem;
   text-align: center;
   margin: 20px 0;
-  color: #20d300;
+  color: #3B6E2F;
 }
 
+/* Buttons Styling */
 .home-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -63,11 +65,20 @@
   background-color: #027ac9;
 }
 
+/* Link Styling */
 .home-link {
   text-decoration: none;
 }
 
+/* Media Queries for Responsiveness */
+
+/* Tablet view and smaller */
 @media (max-width: 768px) {
+  /* Stop rotating the image on smaller screens */
+  .home-image-container {
+    animation: none; /* Disable the 3D rotation on mobile */
+  }
+
   .home-title {
     font-size: 1.5rem;
   }
@@ -83,6 +94,7 @@
   }
 }
 
+/* Mobile view */
 @media (max-width: 480px) {
   .home-title {
     font-size: 1.3rem;

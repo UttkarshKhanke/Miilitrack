@@ -43,7 +43,7 @@
     cursor: pointer;
     font-size: 16px;
     transition: 0.3s ease;
-    border-radius: 8px;
+    border-radius: 6px;
   }
   
   .nav-links li button:hover {

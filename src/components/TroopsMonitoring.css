@@ -39,7 +39,7 @@ select {
 }
 
 button {
-  background-color: #4CAF50;
+  background-color: #57791b;
   color: white;
   cursor: pointer;
   font-weight: bold;
@@ -75,7 +75,7 @@ li {
 }
 
 li button {
-  background-color: #e74c3c;
+  background-color: #7A2A2A;
   color: white;
   padding: 8px 15px;
   border: none;

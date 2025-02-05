@@ -38,7 +38,7 @@
 
 /* Button Styles */
 .btn {
-  background-color: #4CAF50; /* Green background */
+  background-color: #57791b; /* Green background */
   color: white;
   font-size: 1rem;
   padding: 12px 24px;
@@ -51,11 +51,11 @@
 }
 
 .add-items-btn {
-  background-color: #2196F3; /* Blue for Add New Items */
+  background-color: #4169E1; /* Blue for Add New Items */
 }
 
 .transfer-items-btn {
-  background-color: #FF9800; /* Orange for Transfer Items */
+  background-color: #d3830b; /* Orange for Transfer Items */
 }
 
 .btn:hover {
