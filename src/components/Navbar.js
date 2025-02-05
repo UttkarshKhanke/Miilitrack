@@ -25,9 +25,6 @@ const Navbar = () => {
             <li><Link to="/GeoLocationMonitoring" onClick={() => setMenuOpen(false)}>Geo Location</Link></li>
             <li><Link to="/TroopsMonitoring" onClick={() => setMenuOpen(false)}>Troop Monitoring</Link></li>
             <li><Link to="/SupplyManagement" onClick={() => setMenuOpen(false)}>Supply Management</Link></li>
-            <li><Link to="/add-new-items" onClick={() => setMenuOpen(false)}>Add Items</Link></li>
-            <li><Link to="/view-items" onClick={() => setMenuOpen(false)}>View Items</Link></li>
-            <li><Link to="/transfer-items" onClick={() => setMenuOpen(false)}>Transfer Items</Link></li>
             <li><Logout /></li>
           </>
         ) : (
