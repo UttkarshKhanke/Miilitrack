@@ -3,13 +3,15 @@
     font-family: "Arial", sans-serif;
 }
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #030981; /* Dark Blue */
-    padding: 10px 10px;
-    color: white;
-  }
+  display: flex;
+  justify-content: center; /* Center the items horizontally */
+  align-items: center;
+  background: #030981; /* Dark Blue */
+  padding: 10px 10px;
+  color: white;
+  width: fit-content; /* Make the navbar wrap content */
+  margin: 0 auto; /* Center the navbar itself within its parent */
+}
   
   /* Navigation Links */
   .nav-links {
@@ -24,7 +26,7 @@
     text-decoration: none;
     font-size: 16px;
     transition: 0.3s ease;
-    padding: 5px 1px;
+    padding: 5px 2px;
   }
   
   .nav-links li a:hover {
@@ -37,11 +39,11 @@
     background: #e74c3c;
     color: white;
     border: none;
-    padding: 8px 12px;
+    padding: 2px 2px;
     cursor: pointer;
     font-size: 16px;
     transition: 0.3s ease;
-    border-radius: 5px;
+    border-radius: 8px;
   }
   
   .nav-links li button:hover {
@@ -71,7 +73,7 @@
       top: 60px;
       left: 0;
       background: #2c3e50;
-      width: 100%;
+      width: fit-content;
       text-align: center;
       padding: 5px 0;
     }
@@ -81,7 +83,7 @@
     }
   
     .nav-links li {
-      padding: 10px 0;
+      padding: 10px 10;
     }
   }
   
