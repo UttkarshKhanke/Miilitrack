@@ -143,15 +143,18 @@ const GeoLocationMonitoring = () => {
       )}
 
       {loading && <p>Loading safe spots...</p>}
-
       <h3>All Safe Spots:</h3>
       <ul>
-        {safeSpots.map((spot) => (
-          <li key={spot.id}>
-            <b>{spot.name}</b> - Latitude: {spot.latitude}, Longitude: {spot.longitude}
-          </li>
-        ))}
-      </ul>
+  {safeSpots.length > 0 ? (
+    safeSpots.map((spot) => (
+      <li key={spot.id}>
+        <b>{spot.name}</b>{"=>"}<b>&nbsp;Latitude:</b> {spot.latitude}<b>,&nbsp; Longitude:</b> {spot.longitude}&nbsp;
+      </li>
+    ))
+  ) : (
+    <p>No safe spots available</p>
+  )}
+</ul>
     </div>
   );
 };

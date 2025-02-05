@@ -3,7 +3,6 @@ import { db } from "../firebase"; // Firebase config import
 import { ref, push, set, onValue, update, remove } from "firebase/database"; // Firebase Realtime Database imports
 import './TroopsMonitoring.css';
 
-
 const TroopsMonitoring = () => {
   const [troops, setTroops] = useState([]); // State to store list of troops
   const [newTroop, setNewTroop] = useState({
@@ -199,111 +198,181 @@ const TroopsMonitoring = () => {
   };
 
   return (
-    <div>
+    <div className="troops-container">
       <h2>Troops Monitoring</h2>
 
       {/* Add Troop Form */}
-      <h3>Add New Troop</h3>
-      <input
-        type="text"
-        name="name"
-        placeholder="Troop Name"
-        value={newTroop.name}
-        onChange={handleInputChange}
-      />
-      <input
-        type="number"
-        name="active_soldiers"
-        placeholder="Active Soldiers"
-        value={newTroop.active_soldiers}
-        onChange={handleInputChange}
-      />
-      <input
-        type="number"
-        name="reserve_soldiers"
-        placeholder="Reserve Soldiers"
-        value={newTroop.reserve_soldiers}
-        onChange={handleInputChange}
-      />
-      <button onClick={addTroop}>Add Troop</button>
+      <form onSubmit={(e) => e.preventDefault()} className="form-container">
+        <h3>Add New Troop</h3>
+        <div className="form-group">
+          <label>Name:</label>
+          <input
+            type="text"
+            name="name"
+            placeholder="Troop Name"
+            value={newTroop.name}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div className="form-group">
+          <label>Active Soldiers:</label>
+          <input
+            type="number"
+            name="active_soldiers"
+            placeholder="Active Soldiers"
+            value={newTroop.active_soldiers}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div className="form-group">
+          <label>Reserve Soldiers:</label>
+          <input
+            type="number"
+            name="reserve_soldiers"
+            placeholder="Reserve Soldiers"
+            value={newTroop.reserve_soldiers}
+            onChange={handleInputChange}
+          />
+        </div>
+        <button onClick={addTroop}>Add Troop</button>
+      </form>
 
-      {/* Transfer Soldiers Within Same Troop (Active <-> Reserve) */}
-      <h3>Transfer Soldiers Within Same Troop</h3>
-      <select name="troopId" value={sameBaseTransfer.troopId} onChange={handleSameBaseTransferChange}>
-        <option value="">Select Troop</option>
-        {troops.map((troop) => (
-          <option key={troop.id} value={troop.id}>
-            {troop.name}
-          </option>
-        ))}
-      </select>
-      <input
-        type="number"
-        name="soldiersToTransfer"
-        placeholder="Number of Soldiers"
-        value={sameBaseTransfer.soldiersToTransfer}
-        onChange={handleSameBaseTransferChange}
-      />
-      <select name="fromType" value={sameBaseTransfer.fromType} onChange={handleSameBaseTransferChange}>
-        <option value="">Transfer From</option>
-        <option value="active">Active Soldiers</option>
-        <option value="reserve">Reserve Soldiers</option>
-      </select>
-      <select name="toType" value={sameBaseTransfer.toType} onChange={handleSameBaseTransferChange}>
-        <option value="">Transfer To</option>
-        <option value="active">Active Soldiers</option>
-        <option value="reserve">Reserve Soldiers</option>
-      </select>
-      <button onClick={transferSoldiersWithinSameBase}>Transfer Soldiers</button>
+      {/* Transfer Soldiers Within Same Troop Form */}
+      <form onSubmit={(e) => e.preventDefault()} className="form-container">
+        <h3>Transfer Soldiers Within Same Troop</h3>
+        <div className="form-group">
+          <label>Select Troop:</label>
+          <select
+            name="troopId"
+            value={sameBaseTransfer.troopId}
+            onChange={handleSameBaseTransferChange}
+          >
+            <option value="">Select Troop</option>
+            {troops.map((troop) => (
+              <option key={troop.id} value={troop.id}>
+                {troop.name}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="form-group">
+          <label>Number of Soldiers:</label>
+          <input
+            type="number"
+            name="soldiersToTransfer"
+            value={sameBaseTransfer.soldiersToTransfer}
+            onChange={handleSameBaseTransferChange}
+          />
+        </div>
+        <div className="form-group">
+          <label>From:</label>
+          <select
+            name="fromType"
+            value={sameBaseTransfer.fromType}
+            onChange={handleSameBaseTransferChange}
+          >
+            <option value="">Select Type</option>
+            <option value="active">Active Soldiers</option>
+            <option value="reserve">Reserve Soldiers</option>
+          </select>
+        </div>
+        <div className="form-group">
+          <label>To:</label>
+          <select
+            name="toType"
+            value={sameBaseTransfer.toType}
+            onChange={handleSameBaseTransferChange}
+          >
+            <option value="">Select Type</option>
+            <option value="active">Active Soldiers</option>
+            <option value="reserve">Reserve Soldiers</option>
+          </select>
+        </div>
+        <button onClick={transferSoldiersWithinSameBase}>Transfer Soldiers</button>
+      </form>
 
       {/* Transfer Soldiers Between Two Troops */}
-      <h3>Transfer Soldiers Between Two Troops</h3>
-      <select name="sourceTroopId" value={crossBaseTransfer.sourceTroopId} onChange={handleCrossBaseTransferChange}>
-        <option value="">Select Source Troop</option>
-        {troops.map((troop) => (
-          <option key={troop.id} value={troop.id}>
-            {troop.name}
-          </option>
-        ))}
-      </select>
-      <select name="destTroopId" value={crossBaseTransfer.destTroopId} onChange={handleCrossBaseTransferChange}>
-        <option value="">Select Destination Troop</option>
-        {troops.map((troop) => (
-          <option key={troop.id} value={troop.id}>
-            {troop.name}
-          </option>
-        ))}
-      </select>
-      <input
-        type="number"
-        name="soldiersToTransfer"
-        placeholder="Number of Soldiers"
-        value={crossBaseTransfer.soldiersToTransfer}
-        onChange={handleCrossBaseTransferChange}
-      />
-      <select name="fromType" value={crossBaseTransfer.fromType} onChange={handleCrossBaseTransferChange}>
-        <option value="">Transfer From</option>
-        <option value="active">Active Soldiers</option>
-        <option value="reserve">Reserve Soldiers</option>
-      </select>
-      <select name="toType" value={crossBaseTransfer.toType} onChange={handleCrossBaseTransferChange}>
-        <option value="">Transfer To</option>
-        <option value="active">Active Soldiers</option>
-        <option value="reserve">Reserve Soldiers</option>
-      </select>
-      <button onClick={transferSoldiersBetweenTroops}>Transfer Soldiers</button>
-
+      <form onSubmit={(e) => e.preventDefault()} className="form-container">
+        <h3>Transfer Soldiers Between Two Troops</h3>
+        <div className="form-group">
+          <label>Select Source Troop:</label>
+          <select
+            name="sourceTroopId"
+            value={crossBaseTransfer.sourceTroopId}
+            onChange={handleCrossBaseTransferChange}
+          >
+            <option value="">Select Source Troop</option>
+            {troops.map((troop) => (
+              <option key={troop.id} value={troop.id}>
+                {troop.name}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="form-group">
+          <label>Select Destination Troop:</label>
+          <select
+            name="destTroopId"
+            value={crossBaseTransfer.destTroopId}
+            onChange={handleCrossBaseTransferChange}
+          >
+            <option value="">Select Destination Troop</option>
+            {troops.map((troop) => (
+              <option key={troop.id} value={troop.id}>
+                {troop.name}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="form-group">
+          <label>Number of Soldiers:</label>
+          <input
+            type="number"
+            name="soldiersToTransfer"
+            value={crossBaseTransfer.soldiersToTransfer}
+            onChange={handleCrossBaseTransferChange}
+          />
+        </div>
+        <div className="form-group">
+          <label>From:</label>
+          <select
+            name="fromType"
+            value={crossBaseTransfer.fromType}
+            onChange={handleCrossBaseTransferChange}
+          >
+            <option value="">Select Type</option>
+            <option value="active">Active Soldiers</option>
+            <option value="reserve">Reserve Soldiers</option>
+          </select>
+        </div>
+        <div className="form-group">
+          <label>To:</label>
+          <select
+            name="toType"
+            value={crossBaseTransfer.toType}
+            onChange={handleCrossBaseTransferChange}
+          >
+            <option value="">Select Type</option>
+            <option value="active">Active Soldiers</option>
+            <option value="reserve">Reserve Soldiers</option>
+          </select>
+        </div>
+        <button onClick={transferSoldiersBetweenTroops}>Transfer Soldiers</button>
+      </form>
       {/* Display List of Troops */}
       <h3>List of Troops</h3>
-      <ul>
-        {troops.map((troop) => (
-          <li key={troop.id}>
-            <strong>{troop.name}</strong> - Active Soldiers: {troop.active_soldiers} | Reserve Soldiers: {troop.reserve_soldiers}
-            {/* Delete Button */}
-            <button onClick={() => deleteTroop(troop.id)}>Delete</button>
-          </li>
-        ))}
-      </ul>
+      <ul className="troop-list">
+  {troops.map((troop) => (
+    <li key={troop.id} className="troop-card">
+      <div className="troop-info">
+        <strong>{troop.name}</strong>
+        <span>Active: {troop.active_soldiers}</span>
+        <span>Reserve: {troop.reserve_soldiers}</span>
+      </div>
+      <button onClick={() => deleteTroop(troop.id)}>Delete</button>
+    </li>
+  ))}
+</ul>
     </div>
   );
 };
