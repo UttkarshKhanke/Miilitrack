@@ -17,4 +17,6 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getDatabase(app); // Initialize Realtime Database
 
+console.log("Firebase Initialized: ", auth , db);
+
 export { auth, db };

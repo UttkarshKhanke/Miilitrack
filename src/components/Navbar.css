@@ -1,89 +1,94 @@
-/* Navbar Container */
-*{
-    font-family: "Arial", sans-serif;
-}
+
 .navbar {
   display: flex;
-  justify-content: center; /* Center the items horizontally */
+  justify-content: space-between; /* Space between brand and links */
   align-items: center;
   background: #030981; /* Dark Blue */
-  padding: 10px 10px;
+  padding: 10px 20px;
   color: white;
-  width: fit-content; /* Make the navbar wrap content */
-  margin: 0 auto; /* Center the navbar itself within its parent */
+  position: fixed; /* ✅ Fix navbar at the top */
+  top: 0;
+  left: 0;
+  width: 100%; /* ✅ Full width */
+  z-index: 1000; /* ✅ Ensure it's above other elements */
 }
-  
-  /* Navigation Links */
-  .nav-links {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-  }
-  
-  /* Links */
-  .nav-links li a {
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    font-size: 16px;
-    transition: 0.3s ease;
-    padding: 5px 2px;
-  }
-  
-  .nav-links li a:hover {
-    background: #1abc9c; /* Teal Hover */
-    border-radius: 5px;
-  }
-  
-  /* Logout Button */
-  .nav-links li button {
-    background: #e74c3c;
-    color: white;
-    border: none;
-    padding: 2px 2px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: 0.3s ease;
-    border-radius: 6px;
-  }
-  
-  .nav-links li button:hover {
-    background: #c0392b;
-  }
-  
-  /* Mobile Menu Button */
+
+/* Push page content down to prevent overlap */
+body {
+  padding-top: 60px; /* ✅ Adjust based on navbar height */
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+/* Links */
+.nav-links li a {
+  color: rgb(0, 0, 0); /* ✅ Change from black to white for better contrast */
+  text-decoration: solid;
+  font-size: 16px;
+  transition: 0.3s ease;
+  padding: 5px 10px;
+  background-color: white;
+}
+
+.nav-links li a:hover {
+  background: #1abc9c; /* Teal Hover */
+  border-radius: 5px;
+}
+
+/* Logout Button */
+.nav-links li button {
+  background: #e74c3c;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s ease;
+  border-radius: 6px;
+}
+
+.nav-links li button:hover {
+  background: #c0392b;
+}
+
+/* Mobile Menu Button */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
   .menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-  }
-  
-  /* Mobile Responsiveness */
-  @media (max-width: 768px) {
-    .menu-toggle {
       display: block;
-    }
-  
-    .nav-links {
+  }
+
+  .nav-links {
       display: none;
       flex-direction: column;
       position: absolute;
-      top: 60px;
+      top: 50px;
       left: 0;
       background: #2c3e50;
-      width: fit-content;
+      width: 100%;
       text-align: center;
-      padding: 5px 0;
-    }
-  
-    .nav-links.open {
-      display: flex;
-    }
-  
-    .nav-links li {
-      padding: 10px 10;
-    }
+      padding: 10px 0;
   }
-  
+
+  .nav-links.open {
+      display: flex;
+  }
+
+  .nav-links li {
+      padding: 10px;
+  }
+}

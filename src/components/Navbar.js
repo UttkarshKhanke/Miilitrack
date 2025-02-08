@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "./AuthContext";
-import Logout from "./Logout";
-import "./Navbar.css"; // Import CSS file
+import "./Navbar.css"; // Import the CSS file
 
 const Navbar = () => {
-  const { user } = useAuth();
-  const [menuOpen, setMenuOpen] = useState(false);
+  const { user, logout } = useAuth();
+  const [menuOpen, setMenuOpen] = useState(false); // State to handle mobile menu
+
+  const handleLogout = () => {
+    logout();
+  };
 
   return (
     <nav className="navbar">
@@ -16,19 +19,26 @@ const Navbar = () => {
         ☰
       </button>
 
-      <ul className={menuOpen ? "nav-links open" : "nav-links"}>
+      {/* Navigation Links */}
+      <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
         {user ? (
           <>
-            <li><Link to="/" onClick={() => setMenuOpen(false)}>Home</Link></li>
-            <li><Link to="/SafeSpots" onClick={() => setMenuOpen(false)}>Safe Spots</Link></li>
-            <li><Link to="/BestRouteFinder" onClick={() => setMenuOpen(false)}>Best Route Finder</Link></li>
-            <li><Link to="/GeoLocationMonitoring" onClick={() => setMenuOpen(false)}>Geo Location</Link></li>
-            <li><Link to="/TroopsMonitoring" onClick={() => setMenuOpen(false)}>Troop Monitoring</Link></li>
-            <li><Link to="/SupplyManagement" onClick={() => setMenuOpen(false)}>Supply Management</Link></li>
-            <li><Logout /></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/SafeSpots">Safe Spots</Link></li>
+            <li><Link to="/BestRouteFinder">Best Route Finder</Link></li>
+            <li><Link to="/GeoLocationMonitoring">GeoLocation</Link></li>
+            <li><Link to="/TroopsMonitoring">Troops Monitoring</Link></li>
+            <li><Link to="/SupplyManagement">Supply Management</Link></li>
+
+            {/* Show Manage Users only for Admin */}
+            {user.role === "admin" && (
+              <li><Link to="/ManageUsers">Manage Users</Link></li>
+            )}
+
+            <li><button onClick={handleLogout}>Logout</button></li>
           </>
         ) : (
-          <li><Link to="/login" onClick={() => setMenuOpen(false)}>Login</Link></li>
+          <li><Link to="/login">Login</Link></li>
         )}
       </ul>
     </nav>

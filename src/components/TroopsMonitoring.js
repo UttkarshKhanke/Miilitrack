@@ -236,7 +236,7 @@ const TroopsMonitoring = () => {
         </div>
         <button onClick={addTroop}>Add Troop</button>
       </form>
-
+      <br></br>
       {/* Transfer Soldiers Within Same Troop Form */}
       <form onSubmit={(e) => e.preventDefault()} className="form-container">
         <h3>Transfer Soldiers Within Same Troop</h3>
@@ -290,7 +290,7 @@ const TroopsMonitoring = () => {
         </div>
         <button onClick={transferSoldiersWithinSameBase}>Transfer Soldiers</button>
       </form>
-
+      <br></br>
       {/* Transfer Soldiers Between Two Troops */}
       <form onSubmit={(e) => e.preventDefault()} className="form-container">
         <h3>Transfer Soldiers Between Two Troops</h3>
@@ -359,6 +359,7 @@ const TroopsMonitoring = () => {
         </div>
         <button onClick={transferSoldiersBetweenTroops}>Transfer Soldiers</button>
       </form>
+        <br></br>
       {/* Display List of Troops */}
       <h3>List of Troops</h3>
       <ul className="troop-list">

@@ -9,10 +9,16 @@
 
 /* Title Styling */
 .home-title {
-  font-size: 2rem;
-  text-align: center;
-  margin: 20px 0;
-  color: #3B6E2F;
+  font-family: "Orbitron", sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+    color: #57791b; /* Green */
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Buttons Styling */
@@ -51,6 +57,16 @@
 
   .home-title {
     font-size: 1.5rem;
+    font-family: "Orbitron", sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+    color: #57791b; /* Dark Blue */
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 
   .home-buttons {

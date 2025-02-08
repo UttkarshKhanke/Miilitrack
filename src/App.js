@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "./components/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Navbar from "./components/Navbar";
@@ -12,7 +12,8 @@ import TroopsMonitoring from "./components/TroopsMonitoring";
 import SupplyManagement from "./components/SupplyManagement";
 import AddNewItems from "./components/AddNewItems";
 import ViewItems from "./components/ViewItems";
-import TransferItems from "./components/TransferItems"
+import TransferItems from "./components/TransferItems";
+import ManageUsers from "./components/ManageUsers";
 
 const App = () => {
   return (
@@ -20,10 +21,10 @@ const App = () => {
       <Router>
         <Navbar />
         <Routes>
-          {/* Public Route (Login Page) */}
+          {/* Public Route */}
           <Route path="/login" element={<Login />} />
 
-          {/* Protected Routes (Requires Authentication) */}
+          {/* Protected Routes */}
           <Route element={<ProtectedRoute />}>
             <Route path="/" element={<Home />} />
             <Route path="/SafeSpots" element={<SafeSpots />} />
@@ -36,8 +37,13 @@ const App = () => {
             <Route path="/transfer-items" element={<TransferItems />} />
           </Route>
 
-          {/* Redirect unknown routes to home */}
-          <Route path="*" element={<Home />} />
+          {/* Admin-Only Route */}
+          <Route element={<ProtectedRoute requiredRole="admin" />}>
+            <Route path="/ManageUsers" element={<ManageUsers />} />
+          </Route>
+
+          {/* Redirect unknown routes */}
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Router>
     </AuthProvider>
