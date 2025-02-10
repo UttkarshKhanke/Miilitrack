@@ -81,9 +81,10 @@
 /* Responsive Fixes */
 @media (max-width: 768px) {
   .safe-spots {
-    max-width: 100%;
-    width: 90%;
+    width: 100%;
+    max-width: none;
     padding: 15px;
+    margin: 10px auto 0 auto; /* Reduce top margin */
   }
 
   .safe-spots h2 {
