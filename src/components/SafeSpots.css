@@ -1,24 +1,26 @@
-/* SafeSpots Container */
+/* Safe Spots Container */
 .safe-spots {
   background-color: #f4f7f9;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
-  margin: 0 auto;
-  margin-top: 1500px;
-  padding: 20px;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  max-width: 1080px;
+  margin: 50px auto; /* Reduced margin for better display */
+  position: relative; /* Ensure proper containment */
+  overflow: hidden; /* Prevent content overflow */
 }
 
 /* Headings */
 .safe-spots h2 {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: #333;
+  margin-bottom: 20px;
+  margin-top: 1250px; /* Ensure separation from content */
 }
 
 .safe-spots h3 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: #444;
   margin-bottom: 10px;
 }
@@ -32,71 +34,87 @@
 .safe-spots ul li {
   background-color: #fff;
   padding: 12px;
-  margin: 8px 0;
   border-radius: 6px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 10px;
+  margin: 8px 0;
+  overflow: hidden; /* Avoid content bleed */
 }
 
 /* Form Fields */
-.safe-spots input,
-.safe-spots select {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
+.safe-spots .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
 }
 
-/* General Button Styling */
-.safe-spots button {
-  width: auto;
-  padding: 8px 12px;
+.safe-spots label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.safe-spots input,
+.safe-spots select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
   font-size: 1rem;
+  box-sizing: border-box; /* Include padding in width */
+}
+
+/* Buttons */
+.safe-spots button {
+  background-color: #57791b;
+  color: white;
+  padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  white-space: nowrap;
 }
 
-.safe-spots button:focus {
-  outline: none;
+.safe-spots button:hover {
+  background-color: #3b5326;
 }
 
-.safe-spots button + button {
-  margin-left: 10px;
+.remove-button {
+  background-color: #960000;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.safe-spots .error-message {
-  color: red;
-  font-size: 1rem;
-  margin-top: 10px;
+.remove-button:hover {
+  background-color: #7a2a2a;
 }
 
-/* Responsive Fixes */
-@media (max-width: 768px) {
+.add-connection-button {
+  background-color: #4169e1;
+}
+
+.add-connection-button:hover {
+  background-color: darkblue;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1080px) {
   .safe-spots {
-    width: 100%;
-    max-width: none;
+    max-width: 100%;
+    width: 90%;
     padding: 15px;
-    margin: 10px auto 0 auto; /* Reduce top margin */
+    margin-top: 20px; /* Reduced margin */
   }
 
   .safe-spots h2 {
     font-size: 2rem;
+    margin-top: 1920px;
   }
 
   .safe-spots h3 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   .safe-spots ul li {
-    flex-direction: column; /* Stack items vertically */
+    flex-direction: column;
     align-items: flex-start;
     padding: 15px;
   }
@@ -105,59 +123,15 @@
   .safe-spots select,
   .safe-spots button {
     width: 100%;
-    padding: 12px;
   }
 
   .safe-spots button {
-    width: 100%;
     margin-top: 5px;
   }
 }
 
-/* Button Styles */
-.remove-button {
-  background-color: #960000;
-  color: white;
-  padding: 8px 12px;
-  font-size: 1rem;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.remove-button:hover {
-  background-color: #7A2A2A;
-}
-
-.add-connection-button {
-  background-color: #4169E1;
-  color: white;
-  padding: 8px 12px;
-  font-size: 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.add-connection-button:hover {
-  background-color: darkblue;
-}
-
-.add-spot-button {
-  background-color: #57791b;
-  color: white;
-  padding: 8px 12px;
-  font-size: 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.add-spot-button:hover {
-  background-color: #3B5326;
-}
-
-/* Adjust Spacing */
-.safe-spots b {
-  margin-right: 3px;
+/* Ensure visibility on all screen sizes */
+html, body {
+  min-height: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }

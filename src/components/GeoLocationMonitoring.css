@@ -7,7 +7,7 @@
   max-width: 900px;
   margin: 20px auto;
   font-family: Arial, sans-serif;
-  margin-top: 200px;
+  margin-top: 320px;
   width: 95%; /* Ensures responsiveness on all screens */
 }
 
@@ -118,6 +118,7 @@
 
   .GeoLocationMonitoring h2 {
     font-size: 2rem;
+    margin-top: 1920px;
   }
 
   .GeoLocationMonitoring h3 {
