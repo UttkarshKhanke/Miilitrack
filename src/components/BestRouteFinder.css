@@ -1,68 +1,173 @@
-.best-route-finder {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    max-width: 600px;
-    margin: 20px auto;
-    font-family: Arial, sans-serif;
+/* Main Map Container */
+.map-container {
+  background: linear-gradient( #1e293b, #0f172a35); /* Dark gradient background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin: 50px auto; /* Centered */
+  position: relative; /* Ensures proper containment */
+  overflow: hidden; /* Prevent content overflow */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
+  height: 100vh; /* Full viewport height */
+  width: 1500px;
+  margin-top: 80px; /* Consistent spacing */
+}
+
+/* Title */
+.title {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #00eaff; /* Light Blue */
+  text-transform: uppercase; /* Match other titles */
+  text-align: center;
+}
+
+/* Route Animation Wrapper */
+.route-animation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px; /* Space between Start, Line, and End */
+  margin-bottom: 30px;
+}
+
+/* Start and End Locations */
+.start-location,
+.end-location {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 100px;
+  padding: 30px;
+  color: #60a5fa; /* Sky Blue */
+}
+
+/* Dropdown Styling */
+.dropdown {
+  margin-top: 8px;
+  padding: 8px 12px;
+  border: none; /* Cleaner design */
+  border-radius: 8px;
+  background: #334155; /* Dark input background */
+  color: #f8fafc; /* Light input text */
+  font-size: 1rem;
+  outline: none;
+  transition: transform 0.3s ease;
+}
+
+.dropdown:focus {
+  transform: scale(1.05); /* Zoom effect on focus */
+}
+
+/* Road Animation (Dotted Line) */
+.road-animation {
+  display: flex;
+  align-items: center;
+  font-size: 50px;
+  color: #93c5fd; /* Light Blue */
+}
+
+/* Moving Dots Animation */
+.moving-dots {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: moveDots 1.6s linear infinite;
+}
+
+@keyframes moveDots {
+  0% {
+    transform: translateX(0);
   }
-  
+  100% {
+    transform: translateX(10px);
+  }
+}
+
+/* Find Route Button */
+.find-route-btn {
+  background-color: #0d00ff81; /* Purple (consistent with other pages) */
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.find-route-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(78, 70, 229, 0.756);
+}
+
+/* Route Display */
+.route-title {
+  font-size: 29px;
+  margin-bottom: 10px;
+  color: #00ffaa; /* Light Blue */
+}
+
+.route {
+  font-weight: bold;
+  color: #f8fafc; /* Light Text */
+  word-wrap: break-word;
+  font-size: 29px;
+}
+
+.no-route {
+  color: #ef4444; /* Red for no route */
+}
+
+/* Distance Section */
+.distance-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 20px;
+  margin-top: 20px;
+  color: #00ddff; /* Light Blue */
+}
+
+.distance-icon {
+  font-size: 25px; /* Icon Size */
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1080px) {
+  .map-container {
+    padding: 15px;
+    width: 100%; /* Full width on smaller screens */
+  }
+
   .title {
-    color: #2c3e50;
-    text-align: center;
-    margin-bottom: 20px;
+    font-size: 1.8rem;
   }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .dropdown {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
+
+  .dropdown,
   .find-route-btn {
-    background-color: #4169E1;
-    color: #fff;
-    padding: 6px 12px; /* Adjusted padding for balanced spacing */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    display: block;
-    margin: 0 auto;
-    width: auto; /* Let the width adjust based on content */
-    white-space: nowrap; /* Prevent text from wrapping inside the button */
+    width: 100%;
   }
-  
-  
-  .find-route-btn:hover {
-    background-color: #2980b9;
-  }
-  
-  .route-title,
-  .distance h3 {
-    margin-top: 20px;
-    color: #34495e;
-  }
-  
-  .route {
-    font-size: 16px;
-    color: #27ae60;
-    font-weight: bold;
-  }
-  
-  .no-route {
-    color: #e74c3c;
-  }
-  
-  .distance {
-    margin-top: 10px;
-    color: #34495e;
-  }
-  
+}
+
+/* Ensure visibility and prevent horizontal scroll */
+html, body {
+  min-height: 100%;
+  overflow-x: hidden;
+}

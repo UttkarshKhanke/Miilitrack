@@ -1,83 +1,171 @@
-/* General Layout */
+/* Main container */
 .troops-container {
-  background-color: #f4f7f9;
-  padding: 25px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  padding: 40px;
+  background: linear-gradient(135deg, rgba(33, 57, 98, 0.486)rgba(15, 23, 42, 0.514)9); /* Transparent gradient */
+  margin-top: 560px;
+}
+
+/* Each box (card) with Glassmorphism Effect */
+.box {
+  background: rgba(17, 28, 43, 0.6); /* Semi-transparent dark */
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px); /* Frosted glass blur */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* Hover effect for cards */
+.box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.6);
+  background: rgba(31, 41, 55, 0.8); /* Darker on hover */
+}
+
+/* Headings */
+.box h3 {
+  color: #ffffff; /* Bright white for better contrast */
+  margin-bottom: 20px;
+  font-size: 2rem; /* Larger size */
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  animation: slideIn 0.6s ease-out;
+}
+
+/* Labels */
+.box label {
+  display: block;
+  color: #e2e8f0; /* Brighter label text */
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+/* Inputs */
+.box input,
+.box select {
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  border: none;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  max-width: 900px;
-  margin: 0 auto;
-  margin-top: 870px;
+  font-size: 1rem;
+  background: rgba(71, 85, 105, 0.6); /* Transparent input */
+  color: #f8fafc;
+  outline: none;
+  backdrop-filter: blur(8px);
+  transition: box-shadow 0.3s ease;
 }
 
-/* Main Form */
-.main-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+/* Input and Select Hover and Focus */
+.box input:focus,
+.box select:focus {
+  background: rgba(52, 78, 113, 0.8);
+  box-shadow: 0 0 10px rgba(56, 94, 148, 0.6);
 }
 
-/* Form Section */
-.form-section {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Form Fields */
-.form-group {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 15px;
-}
-
-label {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-input, select {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+/* Custom Select Dropdown */
+.box select {
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px;
+  cursor: pointer;
 }
 
 /* Buttons */
-button {
-  background-color: #57791b;
-  color: white;
-  padding: 10px;
+.box button {
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: #ffffff;
+  padding: 14px 24px;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
   cursor: pointer;
+  transition:transform 0.2s ease;
 }
 
-button:hover {
-  background-color: #3B5326;
+/* Button Hover */
+.box button:hover {
+  background: linear-gradient(135deg, #6366f1, #818cf8);
+  transform: scale(1.08);
+}
+
+/* Delete Button (Red Style) */
+.delete-btn {
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+}
+
+.delete-btn:hover {
+  background: linear-gradient(135deg, #ef4444, #f87171);
 }
 
 /* Troop List */
-.troop-list {
+.box ul {
   list-style: none;
   padding: 0;
+  max-height: 250px; /* Larger height */
+  overflow-y: auto;
+  border-top: 1px solid rgba(100, 116, 139, 0.6);
+  margin-top: 20px;
 }
 
-.troop-card {
-  background-color: #fff;
-  padding: 12px;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+/* Scrollbar Styling */
+.box ul::-webkit-scrollbar {
+  width: 8px;
+}
+
+.box ul::-webkit-scrollbar-thumb {
+  background: rgba(107, 114, 128, 0.7);
+  border-radius: 10px;
+}
+
+/* Troop Item */
+.box ul li {
   display: flex;
   justify-content: space-between;
-  margin: 8px 0;
+  align-items: center;
+  padding: 12px 0;
+  color: #e5e7eb;
+  font-size: 1.1rem;
+  border-bottom: 1px solid rgba(100, 116, 139, 0.6);
 }
 
-.troop-card button {
-  background-color: #960000; /* Red */
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .troops-container {
+    grid-template-columns: 1fr; /* Stack cards on small screens */
+  }
+
+  .box {
+    padding: 25px;
+  }
 }

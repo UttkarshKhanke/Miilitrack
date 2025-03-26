@@ -1,60 +1,162 @@
-/* AddNewItems.css */
+/* Container Styling */
 .add-new-items-container {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 10px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: 'Arial', sans-serif;
+  width: 100%;
+  max-width: 650px; /* Slightly increased for consistency */
+  margin: 50px auto; /* Vertical spacing for better layout */
+  padding: 20px;
+  background: linear-gradient(135deg, #2c3e50, #4ca1af); /* Gradient background */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+  font-family: 'Arial', sans-serif;
+  color: white; /* Text color for better contrast */
+  animation: fadeIn 1.2s ease-in-out; /* Page fade-in animation */
+}
+
+/* Heading Styling */
+h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+  text-transform: uppercase; /* Stylish uppercase heading */
+  animation: fadeInDown 1s ease-in-out; /* Slide-in animation */
+}
+
+/* Input Group Styling */
+.input-group {
+  margin-bottom: 25px;
+}
+
+/* Input Labels */
+.input-group label {
+  font-size: 1.2rem;
+  display: block; /* Ensure labels are above inputs */
+  margin-bottom: 10px;
+  text-transform: uppercase; /* Consistent uppercase */
+}
+
+/* Input & Select Fields */
+.input-group select,
+.input-group input {
+  width: 100%;
+  padding: 12px; /* Increased padding for better UX */
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px; /* Smooth corners */
+  background-color: rgba(255, 255, 255, 0.9); /* Light background */
+  color: #2c3e50; /* Darker input text */
+  transition: box-shadow 0.3s ease;
+}
+
+/* Input Focus Effect */
+.input-group select:focus,
+.input-group input:focus {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  outline: none;
+}
+
+/* Image Display Styling */
+.item-image {
+  margin-top: 30px;
+  text-align: center;
+}
+
+/* Image Styling */
+.item-image img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Consistent hover shadow */
+  animation: float 3s ease-in-out infinite; /* Floating animation */
+}
+
+/* Add Item Button */
+.add-item-button {
+  padding: 15px 30px; /* Larger padding for better click area */
+  background: linear-gradient(135deg, #4169e1, #3b5998); /* Consistent blue gradient */
+  color: white;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 10px; /* Rounded corners */
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block; /* Block for easy centering */
+  margin: 30px auto; /* Centered horizontally */
+  text-transform: uppercase; /* Consistent uppercase */
+}
+
+/* Add Item Button Hover */
+.add-item-button:hover {
+  transform: scale(1.1); /* Pop effect on hover */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* Shadow on hover */
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .add-new-items-container {
+    padding: 15px; /* Reduced padding for tablets */
+  }
+
   h2 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
+    font-size: 2rem; /* Smaller heading */
   }
-  
-  .input-group {
-    margin-bottom: 20px;
-  }
-  
+
   .input-group label {
-    font-size: 1rem;
-    color: #333;
+    font-size: 1rem; /* Adjusted label size */
   }
-  
+
+  .add-item-button {
+    font-size: 1.1rem; /* Smaller button size */
+  }
+}
+
+@media (max-width: 480px) {
+  .add-new-items-container {
+    padding: 10px; /* Compact padding for small screens */
+  }
+
+  h2 {
+    font-size: 1.7rem; /* Mobile-friendly heading */
+  }
+
   .input-group select,
   .input-group input {
-    width: 100%;
-    padding: 5px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 10px; /* Adjust input padding */
   }
-  
+
   .add-item-button {
-    width: fit-content;
-    padding: 12px;
-    background-color: #57791b;
-    color: white;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    display: block; /* Make it a block element */
-    margin: 0 auto; /* This centers the button horizontally */
+    font-size: 1rem; /* Compact button size */
   }
-  
-  .add-item-button:hover {
-    background-color: #45a049;
-  }
-  
-  .item-image img {
-    max-width: 100%;
-    margin-top: 5px;
-    border-radius: 5px;
-  }
-  
+}

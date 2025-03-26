@@ -1,27 +1,31 @@
-/* Safe Spots Container */
+/* Main Safe Spots Container */
 .safe-spots {
-  background-color: #f4f7f9;
-  padding: 25px;
+  background: linear-gradient(to right, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.8)); /* Dark gradient with transparency */
+  padding: 10px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  max-width: 1080px;
-  margin: 50px auto; /* Reduced margin for better display */
-  position: relative; /* Ensure proper containment */
+  margin: 50px auto; /* Centered */
+  position: relative; /* Ensures proper containment */
   overflow: hidden; /* Prevent content overflow */
+  display: flex; /* Split screen */
+  height: 100vh; /* Full viewport height */
+  width: 1500px; /* Fixed width */
+  margin-top: 80px; /* Offset from top */
+  backdrop-filter: blur(12px); /* Glassmorphism effect */
 }
 
 /* Headings */
 .safe-spots h2 {
   text-align: center;
   font-size: 2.2rem;
-  color: #333;
+  color: #93c5fd; /* Light Blue */
   margin-bottom: 20px;
-  margin-top: 1250px; /* Ensure separation from content */
+  text-transform: uppercase;
 }
 
 .safe-spots h3 {
   font-size: 1.6rem;
-  color: #444;
+  color: #60a5fa; /* Sky Blue */
   margin-bottom: 10px;
 }
 
@@ -32,14 +36,20 @@
 }
 
 .safe-spots ul li {
-  background-color: #fff;
+  background-color: rgba(237, 237, 237, 0.8); /* Light gray with transparency */
   padding: 12px;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
   margin: 8px 0;
-  overflow: hidden; /* Avoid content bleed */
+  transition: transform 0.3s ease;
+}
+
+/* List Item Hover Effect */
+.safe-spots ul li:hover {
+  background: rgba(100, 116, 139, 0.9); /* Slightly lighter shade on hover */
+  transform: scale(1.03); /* Zoom effect */
 }
 
 /* Form Fields */
@@ -52,77 +62,136 @@
 .safe-spots label {
   font-weight: bold;
   margin-bottom: 5px;
+  color: #93c5fd; /* Light Blue */
 }
 
 .safe-spots input,
 .safe-spots select {
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: none; /* Cleaner design */
+  border-radius: 8px;
+  background: rgba(51, 65, 85, 0.8); /* Dark input background with transparency */
+  color: #f8fafc; /* Light input text */
   font-size: 1rem;
-  box-sizing: border-box; /* Include padding in width */
+  transition: transform 0.3s ease;
 }
 
-/* Buttons */
+/* Input Hover Effect */
+.safe-spots input:focus,
+.safe-spots select:focus {
+  outline: none;
+  transform: scale(1.05); /* Slight zoom */
+}
+
+/* Button Styles */
 .safe-spots button {
-  background-color: #57791b;
-  color: white;
   padding: 10px 20px;
+  margin-top: 10px;
   border: none;
-  border-radius: 5px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-weight: bold;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.safe-spots button:hover {
-  background-color: #3b5326;
+/* Add Button */
+.add-spot-button {
+  background: #4f46e5; /* Purple */
+  color: #fff;
 }
 
+.add-spot-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(79, 70, 229, 0.5);
+}
+
+/* Remove Button */
 .remove-button {
-  background-color: #960000;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  background: #ef4444; /* Red */
+  color: white;
 }
 
 .remove-button:hover {
-  background-color: #7a2a2a;
+  background-color: #7a2a2a; /* Darker Red */
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(239, 68, 68, 0.5);
 }
 
+/* Add Connection Button */
 .add-connection-button {
-  background-color: #4169e1;
+  background: #22c55e; /* Green */
+  color: white;
 }
 
 .add-connection-button:hover {
-  background-color: darkblue;
+  background: #15803d; /* Dark Green */
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(34, 197, 94, 0.5);
 }
 
-/* Responsive Adjustments */
+/* Left, Middle, Right Sections */
+.left-section,
+.middle-section,
+.right-section {
+  padding: 2px;
+  box-sizing: border-box; /* Ensure padding is included */
+  overflow-y: auto; /* Allow vertical scrolling if needed */
+  animation: fadeIn 0.6s ease-out; /* Fade-in effect */
+}
+
+/* Left Section: Safe Spots List */
+.left-section {
+  flex: 1; /* Equal width */
+  background: rgba(255, 255, 255, 0.1);
+  border-right: 5px solid black; 
+  box-shadow: 4px 0 8px rgba(79, 70, 229, 0.3);
+  max-width: 800px;
+}
+
+/* Middle Section: Add/Remove Form */
+.middle-section {
+  flex: 2; /* Wider */
+  max-width: 320px; /* Restrict width */
+  background: rgba(255, 255, 255, 0.1);
+  border-right: 5px solid #000000;
+  box-shadow: 4px 0 8px rgba(79, 70, 229, 0.3);
+}
+
+/* Right Section: Connections */
+.right-section {
+  flex: 1; /* Equal width */
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: -4px 0 8px rgba(79, 70, 229, 0.3);
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
 @media (max-width: 1080px) {
   .safe-spots {
-    max-width: 100%;
-    width: 90%;
+    flex-direction: column; /* Stack vertically */
     padding: 15px;
-    margin-top: 20px; /* Reduced margin */
   }
 
   .safe-spots h2 {
-    font-size: 2rem;
-    margin-top: 1920px;
-  }
-
-  .safe-spots h3 {
-    font-size: 1.4rem;
-  }
-
-  .safe-spots ul li {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 15px;
+    font-size: 1.8rem; /* Adjust heading size */
   }
 
   .safe-spots input,
   .safe-spots select,
   .safe-spots button {
-    width: 100%;
+    width: 100%; /* Full width */
   }
 
   .safe-spots button {
@@ -130,8 +199,8 @@
   }
 }
 
-/* Ensure visibility on all screen sizes */
+/* Ensure visibility and prevent horizontal scroll */
 html, body {
   min-height: 100%;
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-x: hidden;
 }

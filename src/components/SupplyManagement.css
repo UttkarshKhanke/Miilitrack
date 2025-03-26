@@ -5,110 +5,138 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #f4f4f9;
+  background: linear-gradient(135deg, #2c3e5027, #1b464d29); /* Gradient similar to GeoLocationMonitoring */
   font-family: Arial, sans-serif;
   padding: 20px;
+  animation: fadeIn 1.2s ease-in-out; /* Smooth fade-in animation */
 }
 
 /* Image Styling */
 .supply-image {
-  width: 250px; /* Reduced size for better responsiveness */
+  width: 250px;
   height: 250px;
   object-fit: cover;
   border-radius: 50%;
-  margin-bottom: 20px; /* Adjust spacing for smaller screens */
+  margin-bottom: 30px; /* Increased margin for better spacing */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Smooth shadow effect */
+  animation: float 3s ease-in-out infinite; /* Floating animation */
 }
 
 /* Heading Styling */
 .heading {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 30px;
+  font-size: 2.5rem;
+  color: white; /* White to contrast the gradient background */
+  margin-bottom: 40px;
   text-align: center;
-  word-wrap: break-word; /* Ensure heading text wraps on smaller screens */
+  word-wrap: break-word;
+  text-transform: uppercase; /* Stylish uppercase letters */
+  letter-spacing: 2px; /* Adds more spacing between characters */
+  animation: fadeInDown 1s ease-in-out; /* Slide-in animation */
 }
 
 /* Buttons Container */
 .buttons-container {
   display: flex;
-  gap: 15px; /* Adjust gap for smaller screens */
+  gap: 20px;
   justify-content: center;
-  flex-wrap: wrap; /* Allow buttons to wrap for narrow screens */
+  flex-wrap: wrap;
 }
 
 /* Button Styles */
 .btn {
-  background-color: #57791b; /* Green background */
+  background-color: #4ca1af; /* Matching primary color */
   color: white;
-  font-size: 1rem;
-  padding: 12px 24px;
+  font-size: 1.2rem;
+  padding: 15px 30px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  width: 180px; /* Adjusted width for consistent scaling */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+  width: 200px; /* Larger button width */
   text-align: center;
+  text-transform: uppercase; /* Consistent style */
 }
 
+/* Add Items Button - Blue Shade */
 .add-items-btn {
-  background-color: #4169E1; /* Blue for Add New Items */
+  background: linear-gradient(135deg, #4169e1, #3b5998);
 }
 
+/* Transfer Items Button - Orange Shade */
 .transfer-items-btn {
-  background-color: #d3830b; /* Orange for Transfer Items */
+  background: linear-gradient(135deg, #d3830b, #a0522d);
 }
 
+/* Hover Effect for All Buttons */
 .btn:hover {
-  background-color: #45a049; /* Darker green on hover */
+  transform: scale(1.1); /* Button pops on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Dynamic shadow */
 }
 
-.add-items-btn:hover {
-  background-color: #0456b9; /* Darker blue on hover */
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.transfer-items-btn:hover {
-  background-color: #de6f00; /* Darker orange on hover */
+@keyframes fadeInDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .supply-image {
-      width: 200px; /* Reduce image size on tablets */
-      height: 200px;
+    width: 200px; /* Smaller image on tablets */
+    height: 200px;
   }
 
   .heading {
-      font-size: 1.5rem; /* Smaller heading for tablets */
-  }
-
-  .buttons-container {
-      gap: 10px; /* Reduce gap for better fit */
+    font-size: 2rem; /* Smaller heading */
   }
 
   .btn {
-      width: 150px; /* Smaller button width for tablets */
-      padding: 10px 20px;
-      font-size: 0.9rem; /* Adjust font size for readability */
+    width: 160px; /* Smaller buttons */
+    padding: 12px 20px;
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 480px) {
   .supply-image {
-      width: 150px; /* Further reduce image size for small screens */
-      height: 150px;
+    width: 150px; /* Compact image for mobile */
+    height: 150px;
   }
 
   .heading {
-      font-size: 1.2rem; /* Adjust heading size for mobile */
-  }
-
-  .buttons-container {
-      gap: 8px; /* Further reduce gap for compact layout */
+    font-size: 1.5rem; /* Adjust heading size */
   }
 
   .btn {
-      width: 130px; /* Compact button size for small screens */
-      padding: 8px 16px;
-      font-size: 0.8rem;
+    width: 140px; /* Compact button size */
+    padding: 10px 18px;
+    font-size: 0.9rem;
   }
 }

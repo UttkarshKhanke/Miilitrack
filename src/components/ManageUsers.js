@@ -146,47 +146,81 @@ const ManageUsers = () => {
   }
 
   return (
-    <div className="manage-users-container">
-      <h2>Manage Users</h2>
-
-      {/* Create New User */}
-      <div>
-        <h3>Create New User</h3>
-        <input type="email" placeholder="Email" value={newEmail} onChange={(e) => setNewEmail(e.target.value)} />
-        <input type="password" placeholder="Password" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} />
-        <select value={newRole} onChange={(e) => setNewRole(e.target.value)}>
-          <option value="user">User</option>
-          <option value="admin">Admin</option>
-        </select>
-        <button onClick={handleCreateUser}>Create User</button>
-      </div>
-
-      {/* Manage Roles */}
-      <div>
-        <h3>Manage Roles</h3>
-        <select value={selectedUser} onChange={(e) => setSelectedUser(e.target.value)}>
-          <option value="">Select User</option>
-          {users.map((u) => (
-            <option key={u.uid} value={u.uid}>{u.email} ({u.role})</option>
-          ))}
-        </select>
-        <select value={updatedRole} onChange={(e) => setUpdatedRole(e.target.value)}>
-          <option value="user">User</option>
-          <option value="admin">Admin</option>
-        </select>
-        <button onClick={handleRoleChange}>Change Role</button>
-      </div>
-
-      {/* Remove User */}
-      <div>
-        <h3>Remove User</h3>
-        <select value={selectedUser} onChange={(e) => setSelectedUser(e.target.value)}>
-          <option value="">Select User</option>
-          {users.map((u) => (
-            <option key={u.uid} value={u.uid}>{u.email} ({u.role})</option>
-          ))}
-        </select>
-        <button onClick={handleRemoveUser}>Remove User</button>
+    <div className="manage-users-page">
+      <div className="manage-users-container">
+        <h2>Manage Users</h2>
+  
+        {/* Create New User */}
+        <div>
+          <h3>Create New User</h3>
+          <input
+            type="email"
+            placeholder="Email"
+            value={newEmail}
+            onChange={(e) => setNewEmail(e.target.value)}
+            className="input-large"
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={newPassword}
+            onChange={(e) => setNewPassword(e.target.value)}
+            className="input-large"
+          />
+          <select
+            value={newRole}
+            onChange={(e) => setNewRole(e.target.value)}
+            className="input-large"
+          >
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+          </select>
+          <button onClick={handleCreateUser}>Create User</button>
+        </div>
+  
+        {/* Manage Roles */}
+        <div>
+          <h3>Manage Roles</h3>
+          <select
+            value={selectedUser}
+            onChange={(e) => setSelectedUser(e.target.value)}
+            className="input-large"
+          >
+            <option value="">Select User</option>
+            {users.map((u) => (
+              <option key={u.uid} value={u.uid}>
+                {u.email} ({u.role})
+              </option>
+            ))}
+          </select>
+          <select
+            value={updatedRole}
+            onChange={(e) => setUpdatedRole(e.target.value)}
+            className="input-large"
+          >
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+          </select>
+          <button onClick={handleRoleChange}>Change Role</button>
+        </div>
+  
+        {/* Remove User */}
+        <div>
+          <h3>Remove User</h3>
+          <select
+            value={selectedUser}
+            onChange={(e) => setSelectedUser(e.target.value)}
+            className="input-large"
+          >
+            <option value="">Select User</option>
+            {users.map((u) => (
+              <option key={u.uid} value={u.uid}>
+                {u.email} ({u.role})
+              </option>
+            ))}
+          </select>
+          <button onClick={handleRemoveUser}>Remove User</button>
+        </div>
       </div>
     </div>
   );

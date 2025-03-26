@@ -88,12 +88,13 @@ function AddNewItems() {
 
   return (
     <div className="add-new-items-container">
-      <h2>Add New Items to Base Inventory</h2>
-
+      <h2 className="card-title">Add New Items to Base Inventory</h2>
+  
       {/* Select Base */}
       <div className="input-group">
-        <label>Select Base:</label>
+      <h3>Select a Base</h3>
         <select
+          id="baseSelect"
           value={selectedBase}
           onChange={(e) => setSelectedBase(e.target.value)}
         >
@@ -105,11 +106,12 @@ function AddNewItems() {
           ))}
         </select>
       </div>
-
+  
       {/* Select Item Type */}
       <div className="input-group">
-        <label>Select Item Type:</label>
+        <h3>Select Item Type</h3>
         <select
+          id="itemTypeSelect"
           value={itemType}
           onChange={(e) => setItemType(e.target.value)}
         >
@@ -120,8 +122,8 @@ function AddNewItems() {
           <option value="Anti_aircraft_gun_systems">Anti-Aircraft Gun Systems</option>
           <option value="Armoured_Personnel_Carriers">Armoured Personnel Carriers</option>
           <option value="Artillery">Artillery</option>
-          <option value="Assualt_Rifles">Assualt Rifles</option>
-          <option value="Ballistic_and_Cruise_Missiles">Ballastic & Cruise Missiles</option>
+          <option value="Assualt_Rifles">Assault Rifles</option>
+          <option value="Ballistic_and_Cruise_Missiles">Ballistic & Cruise Missiles</option>
           <option value="Engineering_and_support_vehicles">Engineering & Support Vehicles</option>
           <option value="Explosives">Explosives</option>
           <option value="Fuel">Fuel</option>
@@ -138,20 +140,21 @@ function AddNewItems() {
           <option value="Sub_Machine_Guns">Sub Machine Guns</option>
           <option value="Towed_Artillery">Towed Artillery</option>
           <option value="UAV">UAV</option>
-          <option value="Unmanned_ground_vehicle">Unmanned Ground vehicle</option>
+          <option value="Unmanned_ground_vehicle">Unmanned Ground Vehicle</option>
           <option value="Utility_and_Staff_Transport">Utility & Staff Transport</option>
           <option value="Vehicles">Vehicles</option>
           <option value="Vessels">Vessels</option>
-          <option value="food_water">Food and water</option>
+          <option value="food_water">Food and Water</option>
           <option value="medical_supplies">Medical Supplies</option>
         </select>
       </div>
-
+  
       {/* Select Sub-Category */}
       {itemType && (
         <div className="input-group">
-          <label>Select Sub-Category:</label>
+          <h3>Select Sub Category</h3>
           <select
+            id="subCategorySelect"
             value={subCategory}
             onChange={(e) => setSubCategory(e.target.value)}
           >
@@ -164,23 +167,24 @@ function AddNewItems() {
           </select>
         </div>
       )}
-
+  
       {/* Input Quantity */}
       <div className="input-group">
-        <label>Quantity:</label>
+      <h3>Enter Quantity</h3>
         <input
+          id="quantityInput"
           type="number"
           value={quantity}
           onChange={(e) => setQuantity(e.target.value)}
           placeholder="Enter quantity to add"
         />
       </div>
-
+  
       {/* Add Button */}
       <button className="add-item-button" onClick={addItem}>
         Add Items
       </button>
-
+  
       {/* Display Image of Selected Item */}
       {imageUrl && (
         <div className="item-image">
@@ -189,7 +193,7 @@ function AddNewItems() {
         </div>
       )}
     </div>
-  );
+  );  
 }
 
 export default AddNewItems;

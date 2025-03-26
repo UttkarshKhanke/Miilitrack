@@ -10,12 +10,15 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [forgotMessage, setForgotMessage] = useState(""); // ✅ Fixed: Added forgotMessage state
   const navigate = useNavigate();
   const { fetchUserData } = useAuth(); 
 
+  // Handle User Login
   const handleLogin = async (e) => {
     e.preventDefault();
     setError("");
+    setForgotMessage(""); // Clear previous forgot password message
 
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
@@ -43,15 +46,51 @@ const Login = () => {
     }
   };
 
+  const handleForgotPassword = (e) => {
+    e.preventDefault();
+    alert("Please Contact the Administrator");
+  };
+
   return (
-    <div>
+    <div className="login-container">
       <h2>Login</h2>
+
       <form onSubmit={handleLogin}>
-        <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-        <button type="submit">Login</button>
+        {/* Input Fields */}
+        <div className="input-group">
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </div>
+
+        <div className="input-group">
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </div>
+
+        {/* Forgot Password Link */}
+        <p>
+          <a href="#" onClick={handleForgotPassword}>Forgot Password?</a>
+        </p>
+
+        {/* Submit Button */}
+        <button type="submit" className="login-btn">Login</button>
+
+        {/* Forgot Password Message */}
+        {forgotMessage && <p className="error-message">{forgotMessage}</p>}
+
+        {/* Error Message */}
+        {error && <p className="error-message">{error}</p>}
       </form>
-      {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
   );
 };

@@ -111,62 +111,76 @@ function BestRouteFinder() {
   };
 
   return (
-    <div className="best-route-finder">
+    <div className="map-container">
       <h2 className="title">Best Route Finder</h2>
-
-      <div className="form-group">
-        <label htmlFor="start-location">Start Location:</label>
-        <select
-          id="start-location"
-          className="dropdown"
-          value={startLocation}
-          onChange={(e) => setStartLocation(e.target.value)}
-        >
-          <option value="">Select Start Location</option>
-          {safeSpots.map((spot) => (
-            <option key={spot.id} value={spot.name}>
-              {spot.name}
-            </option>
-          ))}
-        </select>
+  
+      {/* Route Animation: Start -> Road -> End */}
+      <div className="route-animation">
+        {/* Start Location */}
+        <div className="start-location">
+          <span role="img" aria-label="map">🗺️</span>
+          <select
+            id="start-location"
+            className="dropdown"
+            value={startLocation}
+            onChange={(e) => setStartLocation(e.target.value)}
+          >
+            <option value="">Select Start Location</option>
+            {safeSpots.map((spot) => (
+              <option key={spot.id} value={spot.name}>
+                {spot.name}
+              </option>
+            ))}
+          </select>
+        </div>
+  
+        {/* Animated Road Line */}
+        <div className="road-animation">
+          <span className="moving-dots">➡️</span>
+        </div>
+  
+        {/* End Location */}
+        <div className="end-location">
+          <span role="img" aria-label="map">🗺️</span>
+          <select
+            id="end-location"
+            className="dropdown"
+            value={endLocation}
+            onChange={(e) => setEndLocation(e.target.value)}
+          >
+            <option value="">Select End Location</option>
+            {safeSpots.map((spot) => (
+              <option key={spot.id} value={spot.name}>
+                {spot.name}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
-
-      <div className="form-group">
-        <label htmlFor="end-location">End Location:</label>
-        <select
-          id="end-location"
-          className="dropdown"
-          value={endLocation}
-          onChange={(e) => setEndLocation(e.target.value)}
-        >
-          <option value="">Select End Location</option>
-          {safeSpots.map((spot) => (
-            <option key={spot.id} value={spot.name}>
-              {spot.name}
-            </option>
-          ))}
-        </select>
-      </div>
-
+  
+      {/* Find Route Button */}
       <button className="find-route-btn" onClick={findRoute}>
         Find Best Route
       </button>
-
+  
+      {/* Display Best Route */}
       <h3 className="route-title">Best Route:</h3>
       {route.length > 0 ? (
         <p className="route">{formatRouteWithArrows(route)}</p>
       ) : (
         <p className="no-route">No route found</p>
       )}
-
+  
+      {/* Distance Section */}
       {totalDistance > 0 && (
-        <div className="distance">
-          <h3>Total Distance:</h3>
-          <p>{totalDistance.toFixed(2)} km</p>
+        <div className="distance-section">
+          <span className="distance-icon">🛣️</span>
+          <p className="distance">{totalDistance.toFixed(2)} km</p>
         </div>
       )}
     </div>
-  );
+  );  
+  
 }
 
 export default BestRouteFinder;

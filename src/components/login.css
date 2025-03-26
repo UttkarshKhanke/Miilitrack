@@ -1,30 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
 body {
-    background: #f4f4f4;
+    width: 100vw;
+    height: 100vh;
+    background: url(./bg.jpg) no-repeat center;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
 
 /* Login Container */
 .login-container {
     width: 100%;
     max-width: 400px;
-    background: white;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.5);
     text-align: center;
 }
 
 /* Heading */
 .login-container h2 {
-    color: #030981; /* Dark Blue */
+    color: #fff;
+    font-size: 2em;
+    text-transform: uppercase;
     margin-bottom: 15px;
 }
 
 /* Input Fields */
 .input-group {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -33,27 +47,48 @@ body {
 
 .input-group input {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
+    padding: 12px;
+    border: none;
+    background: transparent;
+    border-bottom: 3px solid #fff;
+    color: #fff;
+    font-size: 1.2em;
+    outline: none;
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1.2em;
+    transition: 0.5s;
+}
+
+.input-group input:focus ~ label,
+.input-group input:valid ~ label {
+    top: -5px;
 }
 
 /* Login Button */
 .login-btn {
-    background: #030981; /* Dark Blue */
-    color: white;
+    background: #fff;
+    color: #000;
     border: none;
     padding: 12px;
-    font-size: 16px;
-    border-radius: 5px;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 40px;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: all 0.5s;
     width: 100%;
 }
 
 .login-btn:hover {
-    background: #1abc9c; /* Teal */
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
 }
 
 /* Error Message */
@@ -67,16 +102,18 @@ body {
 .links {
     margin-top: 15px;
     font-size: 14px;
+    color: #fff;
 }
 
 .links a {
-    color: #030981;
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
 }
 
 .links a:hover {
     text-decoration: underline;
+    font-style: italic;
 }
 
 /* Responsive Design */

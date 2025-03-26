@@ -1,147 +1,150 @@
-/* Container */
+/* Scoped to GeoLocationMonitoring Component */
 .GeoLocationMonitoring {
-  background-color: #f4f7f9;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  max-width: 900px;
-  margin: 20px auto;
-  font-family: Arial, sans-serif;
-  margin-top: 320px;
-  width: 95%; /* Ensures responsiveness on all screens */
-}
-
-/* Headings */
-.GeoLocationMonitoring h2 {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background: rgba(32, 54, 110, 0.384);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
   text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+  margin-top: 180px;
+}
+
+/* Scoped Heading Animation */
+.GeoLocationMonitoring h2 {
   font-size: 2.5rem;
-  color: #333;
+  font-weight: bold;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  -webkit-background-clip: text;
+  color: transparent;
   margin-bottom: 20px;
+  animation: slideInDown 1s ease-in-out;
 }
 
-.GeoLocationMonitoring h3 {
-  font-size: 1.8rem;
-  color: #444;
-  margin-bottom: 15px;
-}
-
-/* Button Styling */
+/* Scoped Button Styling */
 .GeoLocationMonitoring button {
-  width: auto;
-  min-width: 150px; /* Prevents extremely small buttons */
-  padding: 10px 20px;
-  font-size: 1rem;
-  color: white;
-  background-color: #4169E1;
-  border: none;
-  border-radius: 5px;
+  padding: 12px 24px;
+  font-size: 1.2rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  display: block;
-  margin: 10px auto; /* Centers the button */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #4e54c8, #8f94fb);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .GeoLocationMonitoring button:hover {
-  background-color: #2980b9;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(143, 148, 251, 0.5);
 }
 
-.GeoLocationMonitoring button:focus {
-  outline: none;
-}
-
-/* Current Location Info */
+/* Scoped Info Text */
 .GeoLocationMonitoring p {
   font-size: 1.1rem;
-  color: #333;
+  line-height: 1.8;
   margin: 10px 0;
+  animation: fadeInUp 1.2s ease-in-out;
 }
 
-/* Nearest Base Info */
-.GeoLocationMonitoring .nearest-base {
-  background-color: #fff;
-  padding: 15px;
-  margin-top: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+/* Scoped Nearest Base Info */
+.GeoLocationMonitoring h3 {
+  font-size: 1.8rem;
+  margin-top: 30px;
+  color: #4db8ff;
 }
 
-.GeoLocationMonitoring .nearest-base p {
-  font-size: 1.1rem;
-  margin: 10px 0;
-}
-
-.GeoLocationMonitoring .nearest-base strong {
-  font-size: 1.2rem;
-  color: #333;
-}
-
-/* Safe Spots List */
+/* Scoped Safe Spots List */
 .GeoLocationMonitoring ul {
   list-style: none;
   padding: 0;
 }
 
 .GeoLocationMonitoring ul li {
-  background-color: #fff;
-  padding: 12px;
-  margin: 8px 0;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap; /* Ensures proper alignment */
-}
-
-.GeoLocationMonitoring ul li b {
-  color: #333;
-  font-size: 1.2rem;
-}
-
-/* Loading & Error Message */
-.GeoLocationMonitoring .loading,
-.GeoLocationMonitoring .error-message {
+  background: rgba(255, 255, 255, 0.15);
+  margin: 10px 0;
+  padding: 12px 20px;
+  border-radius: 12px;
   font-size: 1rem;
-  color: #e74c3c;
-  text-align: center;
-  margin-top: 20px;
+  animation: fadeInUp 0.8s ease-in-out;
+  transition: transform 0.3s;
 }
 
-/* Responsive Styles */
+.GeoLocationMonitoring ul li:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 198, 255, 0.3);
+}
+
+/* Scoped Loading Spinner */
+.GeoLocationMonitoring .loading {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  animation: pulse 1.5s infinite;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
   .GeoLocationMonitoring {
-    width: 100%;
-    max-width: 100%;
-    padding: 15px;
-    margin: 10px auto 0 auto;
+    padding: 20px;
   }
 
   .GeoLocationMonitoring h2 {
     font-size: 2rem;
-    margin-top: 1920px;
-  }
-
-  .GeoLocationMonitoring h3 {
-    font-size: 1.6rem;
   }
 
   .GeoLocationMonitoring button {
-    width: 100%;
-    padding: 12px;
-    font-size: 1.2rem;
-  }
-
-  .GeoLocationMonitoring .nearest-base {
-    margin-top: 15px;
-  }
-
-  .GeoLocationMonitoring ul li {
-    flex-direction: column; /* Stack items on smaller screens */
-    align-items: flex-start;
-    padding: 15px;
-  }
-
-  .GeoLocationMonitoring ul li b {
     font-size: 1rem;
+  }
+
+  .GeoLocationMonitoring p,
+  .GeoLocationMonitoring ul li {
+    font-size: 0.9rem;
   }
 }

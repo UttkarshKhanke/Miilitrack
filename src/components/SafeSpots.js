@@ -352,10 +352,10 @@ const addSafeSpot = async () => {
 
   return (
     <div className="safe-spots">
+      <div className="left-section">
       <h2>Safe Spots</h2>
 
       {/* Display current safe spots */}
-      <h3>Current Safe Spots:</h3>
       <ul>
   {safeSpots.length > 0 ? (
     safeSpots.map((spot) => (
@@ -368,7 +368,8 @@ const addSafeSpot = async () => {
     <p>No safe spots available</p>
   )}
 </ul>
-
+</div>
+<div className="middle-section">
 <h3>Add Safe Spot:</h3>
 <input
   type="text"
@@ -376,12 +377,14 @@ const addSafeSpot = async () => {
   value={spot}
   onChange={(e) => setSpot(e.target.value)}
 />
+  <br></br>
 <input
   type="number"
   placeholder="Latitude"
   value={lat}
   onChange={(e) => setLat(e.target.value)}
 />
+<br></br>
 <input
   type="number"
   placeholder="Longitude"
@@ -390,7 +393,7 @@ const addSafeSpot = async () => {
 />
 <br></br>
 <button className="add-spot-button" onClick={addSafeSpot}>Add Safe Spot</button>
-
+<br></br><br></br><br></br><br></br>
 <h3>Add Connection Between Bases:</h3>
 <select 
   value={selectedSpot} 
@@ -403,7 +406,7 @@ const addSafeSpot = async () => {
     </option>
   ))}
 </select>
-
+<br></br>
 <select 
   value={connectionBase} 
   onChange={(e) => setConnectionBase(e.target.value)}
@@ -418,14 +421,16 @@ const addSafeSpot = async () => {
     ))}
 </select><br></br>
 <button className="add-connection-button" onClick={addConnection}>Add Connection</button>
+</div>
 
+<div className="right-section">
       {/* Display Current Connections */}
       <h3>Current Connections:</h3>
       <ul>
         {Object.keys(connections).length > 0 ? (
           Object.keys(connections).map((base) => (
             <li key={base}>
-              <b>{base}</b> is connected to:
+              <b>{base}</b><br></br>is &nbsp;connected to:
               <ul>
                 {connections[base].map((connectedBase, index) => (
                   <li key={index}>
@@ -440,6 +445,7 @@ const addSafeSpot = async () => {
           <p>No connections available</p>
         )}
       </ul>
+    </div>
     </div>
   );
 };

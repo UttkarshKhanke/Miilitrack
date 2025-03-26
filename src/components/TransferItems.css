@@ -1,71 +1,199 @@
+/* Container Styling */
 .transfer-items-container {
-    display: flex;
-    justify-content: center;
-    padding: 10px;
+  display: flex;
+  justify-content: center;
+  padding: 20px; /* Increased padding for better spacing */
+  animation: fadeIn 1s ease-in-out; /* Smooth fade-in effect */
+}
+
+/* Card Styling */
+.transfer-items-card {
+  width: 100%;
+  max-width: 600px; /* Increased for consistency */
+  background: linear-gradient(135deg, #2c3e50, #4ca1af); /* Matching gradient background */
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Deeper shadow for a lifted effect */
+  border-radius: 15px; /* Rounded corners */
+  color: white; /* White text for better contrast */
+}
+
+/* Card Title */
+.card-title {
+  text-align: center;
+  font-size: 2.5rem; /* Bigger for emphasis */
+  margin-bottom: 30px; /* Increased spacing */
+  letter-spacing: 1.5px; /* Stylish letter spacing */
+  text-transform: uppercase; /* Consistent uppercase */
+  animation: fadeInDown 1s ease-in-out; /* Slide-in animation */
+}
+
+/* Form Group Styling */
+.form-group {
+  margin-bottom: 25px; /* Increased for better spacing */
+}
+
+/* Form Labels */
+.form-group label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block; /* Ensures it stays above input */
+  text-transform: uppercase; /* Consistent style */
+}
+
+/* Form Controls */
+.form-control {
+  width: 100%;
+  padding: 12px; /* Larger padding for better UX */
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px; /* Smooth rounded corners */
+  background-color: rgba(255, 255, 255, 0.9); /* Light background */
+  color: #2c3e50; /* Darker text for contrast */
+  transition: box-shadow 0.3s ease;
+}
+
+/* Focus Effect on Inputs */
+.form-control:focus {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Soft glow effect */
+  outline: none;
+}
+
+/* Submit Button */
+.btn-submit {
+  padding: 15px 30px; /* Larger for better click area */
+  background: linear-gradient(135deg, #4169e1, #3b5998); /* Consistent blue gradient */
+  color: white;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 10px; /* Rounded corners */
+  cursor: pointer;
+  display: block; /* Center horizontally */
+  margin: 30px auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-transform: uppercase; /* Consistent uppercase style */
+}
+
+/* Submit Button Hover */
+.btn-submit:hover {
+  transform: scale(1.1); /* Hover pop effect */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* Hover shadow */
+}
+
+/* Disabled Button State */
+.btn-submit:disabled {
+  background: #aaa; /* Grayed out */
+  cursor: not-allowed; /* Disabled cursor */
+  box-shadow: none; /* No shadow */
+}
+
+/* Image Styling */
+.item-image {
+  max-width: 250px; /* Increased size for better visibility */
+  display: block;
+  margin: 30px auto; /* Centering */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Consistent hover shadow */
+  animation: float 3s ease-in-out infinite; /* Floating animation */
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  text-align: center;
+  font-size: 1.5rem;
+  color: white; /* Consistent with the card */
+  animation: pulse 1.5s infinite; /* Pulsating animation */
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .transfer-items-card {
-    width: 100%;
-    max-width: 500px;
-    background-color: #fff;
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    padding: 15px;
   }
-  
+
   .card-title {
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 2rem;
   }
-  
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
+
   .form-group label {
-    font-weight: bold;
-    margin-bottom: 8px;
-    display: block;
+    font-size: 1rem;
   }
-  
-  .form-control {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-  
+
   .btn-submit {
-    width: fit-content;
-    padding: 12px;
-    background-color: #57791b;
-    color: white;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    display: block; /* Make it a block element */
-    margin: 0 auto; /* This centers the button horizontally */
+    font-size: 1.1rem;
   }
-  
-  .btn-submit:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  
-  .loading-spinner {
-    text-align: center;
-    font-size: 18px;
-    color: #555;
-  }
-  
+
   .item-image {
     max-width: 200px;
-    display: block;
-    margin: 0 auto;
-    margin-top: 10px;
   }
-  
+}
+
+@media (max-width: 480px) {
+  .transfer-items-card {
+    padding: 10px;
+  }
+
+  .card-title {
+    font-size: 1.7rem;
+  }
+
+  .form-group label {
+    font-size: 0.9rem;
+  }
+
+  .btn-submit {
+    font-size: 1rem;
+  }
+
+  .item-image {
+    max-width: 150px;
+  }
+}

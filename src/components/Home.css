@@ -1,24 +1,36 @@
 /* Home.css */
+
+/* Container Styling */
 .home-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-  background-color: #f4f4f4;
+  border-radius: 20px;
+  padding: 10px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* Title Styling */
+/* Hover Animation (Desktop + Mobile) */
+@media (hover: hover) {
+  .home-container:hover {
+    transform: scale(1.03); /* Slight zoom effect */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  }
+}
+
+/* Title Styling (with Transparent Background) */
 .home-title {
   font-family: "Orbitron", sans-serif;
-    font-weight: bold;
-    font-size: 50px;
-    color: #57791b; /* Green */
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    background-color: #ffffff;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  font-size: 50px;
+  color: #57791b; /* Green */
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  background-color: rgb(255, 255, 255); /* Transparent box (30% opacity) */
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px); /* Glassmorphism Effect */
 }
 
 /* Buttons Styling */
@@ -50,23 +62,12 @@
   text-decoration: none;
 }
 
-/* Media Queries for Responsiveness */
-
 /* Tablet view and smaller */
 @media (max-width: 768px) {
-
   .home-title {
     font-size: 1.5rem;
-    font-family: "Orbitron", sans-serif;
-    font-weight: bold;
-    font-size: 50px;
-    color: #57791b; /* Dark Blue */
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    background-color: #ffffff;
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 
   .home-buttons {
@@ -93,7 +94,14 @@
 
   .home-btn {
     width: 100%;
-    padding: 12px;
     font-size: 1.2rem;
+  }
+
+  /* Enable Hover Effect on Touch Devices */
+  @media (hover: none) {
+    .home-container:active {
+      transform: scale(1.03);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
   }
 }

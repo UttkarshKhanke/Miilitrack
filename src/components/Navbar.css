@@ -1,59 +1,106 @@
-
+/* Navbar Container */
 .navbar {
   display: flex;
   justify-content: space-between; /* Space between brand and links */
   align-items: center;
-  background: #030981; /* Dark Blue */
-  padding: 10px 20px;
+  background: linear-gradient(135deg, #1a1a72, #5b2be1); /* Gradient Blue */
+  padding: 15px 30px;
   color: white;
-  position: fixed; /* ✅ Fix navbar at the top */
+  position: fixed; /* Fixed Navbar */
   top: 0;
   left: 0;
-  width: 100%; /* ✅ Full width */
-  z-index: 1000; /* ✅ Ensure it's above other elements */
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle Shadow */
+  transition: background 0.4s ease;
 }
 
-/* Push page content down to prevent overlap */
+/* Push Content Down (Avoid Navbar Overlap) */
 body {
-  padding-top: 60px; /* ✅ Adjust based on navbar height */
+  padding-top: 80px; /* Adjusted for navbar height */
+  margin: 0; /* Remove default margin */
+  font-family: 'Poppins', sans-serif; /* Modern Font */
+}
+
+/* Navbar Logo (Brand) */
+.navbar-brand {
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(45deg, #fff, #dcdcdc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* Gradient Text */
+  animation: glow 2s infinite alternate;
+}
+
+/* Glow Animation */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 8px #ffffff;
+  }
+  to {
+    text-shadow: 0 0 20px #87ceeb, 0 0 30px #5b2be1;
+  }
 }
 
 /* Navigation Links */
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 20px;
+  gap: 25px;
 }
 
-/* Links */
+/* Navigation Items */
 .nav-links li a {
-  color: rgb(0, 0, 0); /* ✅ Change from black to white for better contrast */
-  text-decoration: solid;
+  color: white;
+  text-decoration: none;
   font-size: 16px;
-  transition: 0.3s ease;
-  padding: 5px 10px;
-  background-color: white;
+  padding: 8px 16px;
+  position: relative;
+  transition: all 0.3s ease;
 }
 
+/* Hover Effect (Sliding Underline) */
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: -4px;
+  left: 0;
+  background: #1abc9c; /* Teal Accent */
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* Fancy Hover Effect (Color Transition) */
 .nav-links li a:hover {
-  background: #1abc9c; /* Teal Hover */
-  border-radius: 5px;
+  background: linear-gradient(90deg, #1abc9c, #16a085);
+  border-radius: 8px;
+  padding: 8px 20px;
+  color: black;
 }
 
 /* Logout Button */
 .nav-links li button {
-  background: #e74c3c;
-  color: rgb(0, 0, 0);
+  background: linear-gradient(45deg, #ff4b2b, #ff416c); /* Gradient Red */
+  color: white;
   border: none;
-  padding: 5px 10px;
+  padding: 8px 16px;
   cursor: pointer;
   font-size: 16px;
-  transition: 0.3s ease;
-  border-radius: 6px;
+  transition: all 0.3s ease;
+  border-radius: 8px;
 }
 
+/* Hover Effect for Logout */
 .nav-links li button:hover {
-  background: #c0392b;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(255, 65, 108, 0.3);
 }
 
 /* Mobile Menu Button */
@@ -62,33 +109,65 @@ body {
   background: none;
   border: none;
   color: white;
-  font-size: 24px;
+  font-size: 32px;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-/* Mobile Responsiveness */
+/* Menu Icon Hover Animation */
+.menu-toggle:hover {
+  transform: rotate(90deg);
+}
+
+/* Mobile Responsive Design */
 @media (max-width: 768px) {
   .menu-toggle {
-      display: block;
+    display: block; /* Show menu icon */
   }
 
+  /* Hide Links Initially */
   .nav-links {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 50px;
-      left: 0;
-      background: #2c3e50;
-      width: 100%;
-      text-align: center;
-      padding: 10px 0;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: rgba(26, 26, 114, 0.95); /* Semi-transparent for effect */
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 0 0 20px 20px;
+    animation: slideDown 0.5s ease;
   }
 
+  /* Slide Animation */
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Open Menu */
   .nav-links.open {
-      display: flex;
+    display: flex;
   }
 
+  /* Make Links Bigger */
   .nav-links li {
-      padding: 10px;
+    padding: 15px 0;
   }
+
+  .nav-links li a {
+    font-size: 18px;
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
 }

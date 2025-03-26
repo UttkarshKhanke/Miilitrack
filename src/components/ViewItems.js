@@ -64,7 +64,7 @@ function ViewItems() {
 
       {/* Select Base */}
       <div className="input-group">
-        <label>Select Base:</label>
+        <h3>Select a Base</h3>
         <select
           value={selectedBase}
           onChange={(e) => setSelectedBase(e.target.value)}
@@ -80,7 +80,7 @@ function ViewItems() {
 
       {/* Select Item Type */}
       <div className="input-group">
-        <label>Select Item Type:</label>
+      <h3>Select Item Type</h3>
         <select
           value={itemType}
           onChange={(e) => setItemType(e.target.value)}
@@ -122,7 +122,7 @@ function ViewItems() {
       {/* Select Sub-Category */}
       {itemType && (
         <div className="input-group">
-          <label>Select Sub-Category:</label>
+          <h3>Select Sub Category</h3>
           <select
             value={subCategory}
             onChange={(e) => setSubCategory(e.target.value)}
