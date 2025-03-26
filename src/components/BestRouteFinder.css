@@ -12,8 +12,10 @@
   align-items: center; /* Center content horizontally */
   justify-content: center; /* Center content vertically */
   height: 100vh; /* Full viewport height */
-  width: 1500px;
+  width: fit-content;
+  height: fit-content;
   margin-top: 80px; /* Consistent spacing */
+  border-radius: 50px;
 }
 
 /* Title */

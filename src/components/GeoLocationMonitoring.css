@@ -46,6 +46,9 @@
   line-height: 1.8;
   margin: 10px 0;
   animation: fadeInUp 1.2s ease-in-out;
+  background: rgba(255, 255, 255, 0.721);
+  border-radius: 12px;
+  padding: 12px 20px;
 }
 
 /* Scoped Nearest Base Info */
@@ -62,7 +65,7 @@
 }
 
 .GeoLocationMonitoring ul li {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.721);
   margin: 10px 0;
   padding: 12px 20px;
   border-radius: 12px;

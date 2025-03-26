@@ -5,10 +5,12 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: linear-gradient(135deg, #2c3e5027, #1b464d29); /* Gradient similar to GeoLocationMonitoring */
+  background: linear-gradient(135deg, #2c4965c4, #1b464dc7); /* Gradient similar to GeoLocationMonitoring */
   font-family: Arial, sans-serif;
   padding: 20px;
   animation: fadeIn 1.2s ease-in-out; /* Smooth fade-in animation */
+  height: fit-content;
+  border-radius: 40px;
 }
 
 /* Image Styling */
