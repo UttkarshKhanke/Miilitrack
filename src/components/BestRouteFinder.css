@@ -153,7 +153,7 @@
 @media (max-width: 1080px) {
   .map-container {
     padding: 15px;
-    width: 100%; /* Full width on smaller screens */
+    width: 83%; /* Full width on smaller screens */
   }
 
   .title {

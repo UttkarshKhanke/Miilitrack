@@ -163,6 +163,7 @@
 @media (max-width: 768px) {
   .troops-container {
     grid-template-columns: 1fr; /* Stack cards on small screens */
+    margin-top: 1370px;
   }
 
   .box {

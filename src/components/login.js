@@ -77,13 +77,14 @@ const Login = () => {
           />
         </div>
 
-        {/* Forgot Password Link */}
-        <p>
-          <button onClick={handleForgotPassword}>Forgot Password?</button>
-        </p>
-
         {/* Submit Button */}
         <button type="submit" className="login-btn">Login</button>
+        {/* Forgot Password Link */}
+
+        <div className="forgotpasswordbutton">
+        <p>
+          <button onClick={handleForgotPassword}>Forgot Password?</button>
+        </p></div>
 
         {/* Forgot Password Message */}
         {forgotMessage && <p className="error-message">{forgotMessage}</p>}

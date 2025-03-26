@@ -178,10 +178,13 @@
 }
 
 /* Responsive Design */
-@media (max-width: 1080px) {
+@media (max-width: 768px) {
   .safe-spots {
     flex-direction: column; /* Stack vertically */
-    padding: 15px;
+    padding: 10px;
+    width: 100%;
+    
+    margin-bottom: 20px;
   }
 
   .safe-spots h2 {
@@ -196,6 +199,10 @@
 
   .safe-spots button {
     margin-top: 5px;
+  }
+  .safe-spots ul li{
+    display: flex;
+    flex-direction: column;
   }
 }
 
