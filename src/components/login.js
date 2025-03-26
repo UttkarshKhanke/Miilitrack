@@ -79,7 +79,7 @@ const Login = () => {
 
         {/* Forgot Password Link */}
         <p>
-          <a onClick={handleForgotPassword}>Forgot Password?</a>
+          <button onClick={handleForgotPassword}>Forgot Password?</button>
         </p>
 
         {/* Submit Button */}
