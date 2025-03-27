@@ -24,7 +24,7 @@
 }
 
 .safe-spots h3 {
-  font-size: 1.6rem;
+  font-size: 29px;
   color: #60a5fa; /* Sky Blue */
   margin-bottom: 10px;
 }
@@ -98,6 +98,7 @@
 .add-spot-button {
   background: #4f46e5; /* Purple */
   color: #fff;
+  margin-top: 8px;
 }
 
 .add-spot-button:hover {
@@ -163,6 +164,10 @@
   max-width: 420px;
   background: rgba(255, 255, 255, 0.1);
   box-shadow: -4px 0 8px rgba(79, 70, 229, 0.3);
+}
+.add-safe-spot-spacing ,select{
+  margin-bottom: 10px;
+  color: white;
 }
 
 /* Fade-In Animation */

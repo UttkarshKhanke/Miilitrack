@@ -376,6 +376,7 @@ const addSafeSpot = async () => {
   placeholder="Safe Spot Name"
   value={spot}
   onChange={(e) => setSpot(e.target.value)}
+  className="add-safe-spot-spacing"
 />
   <br></br>
 <input
@@ -383,6 +384,7 @@ const addSafeSpot = async () => {
   placeholder="Latitude"
   value={lat}
   onChange={(e) => setLat(e.target.value)}
+  className="add-safe-spot-spacing"
 />
 <br></br>
 <input
@@ -390,6 +392,7 @@ const addSafeSpot = async () => {
   placeholder="Longitude"
   value={lng}
   onChange={(e) => setLng(e.target.value)}
+  className="add-safe-spot-spacing"
 />
 <br></br>
 <button className="add-spot-button" onClick={addSafeSpot}>Add Safe Spot</button>
