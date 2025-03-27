@@ -170,6 +170,9 @@
   color: white;
 }
 
+.add-safe-spot-spacing::placeholder{
+  color: rgba(255, 255, 255, 0.955); /* White Text */
+}
 /* Fade-In Animation */
 @keyframes fadeIn {
   from {
