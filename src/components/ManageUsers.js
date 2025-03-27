@@ -151,7 +151,7 @@ const ManageUsers = () => {
         <h2>Manage Users</h2>
   
         {/* Create New User */}
-        <div>
+        <div className="input-group">
           <h3>Create New User</h3>
           <input
             type="email"
@@ -175,8 +175,8 @@ const ManageUsers = () => {
             <option value="user">User</option>
             <option value="admin">Admin</option>
           </select>
-          <button onClick={handleCreateUser}>Create User</button>
-        </div>
+          <div className="mg-pg-btn">
+          <button class="custom-btn" onClick={handleCreateUser}>Create User</button></div>
   
         {/* Manage Roles */}
         <div>
@@ -184,8 +184,7 @@ const ManageUsers = () => {
           <select
             value={selectedUser}
             onChange={(e) => setSelectedUser(e.target.value)}
-            className="input-large"
-          >
+          className="roles-space">
             <option value="">Select User</option>
             {users.map((u) => (
               <option key={u.uid} value={u.uid}>
@@ -196,12 +195,12 @@ const ManageUsers = () => {
           <select
             value={updatedRole}
             onChange={(e) => setUpdatedRole(e.target.value)}
-            className="input-large"
+            className="cr-sp"
           >
             <option value="user">User</option>
             <option value="admin">Admin</option>
           </select>
-          <button onClick={handleRoleChange}>Change Role</button>
+          <button class="custom-btn" onClick={handleRoleChange}>Change Role</button>
         </div>
   
         {/* Remove User */}
@@ -210,7 +209,7 @@ const ManageUsers = () => {
           <select
             value={selectedUser}
             onChange={(e) => setSelectedUser(e.target.value)}
-            className="input-large"
+            className="roles-space"
           >
             <option value="">Select User</option>
             {users.map((u) => (
@@ -219,7 +218,9 @@ const ManageUsers = () => {
               </option>
             ))}
           </select>
-          <button onClick={handleRemoveUser}>Remove User</button>
+            </div>
+            <div className="mg-pg-btn">
+          <button class="custom-btn" onClick={handleRemoveUser}>Remove User</button></div>
         </div>
       </div>
     </div>
