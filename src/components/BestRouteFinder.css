@@ -1,6 +1,6 @@
 /* Main Map Container */
 .map-container {
-  background: linear-gradient( #1e293b, #0f172a35); /* Dark gradient background */
+  background: linear-gradient( #1e293b, #0f172ac2); /* Dark gradient background */
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
