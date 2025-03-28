@@ -51,7 +51,7 @@ const ManageUsers = () => {
   
     // Store the currently logged-in admin's email & password
     const adminEmail = auth.currentUser.email;
-    const adminPassword = prompt("Re-enter your password to stay logged in:"); // Ask admin for re-auth
+    const adminPassword = prompt("Re-enter your password to Create User:"); // Ask admin for re-auth
   
     if (!adminPassword) return alert("Admin password is required!");
   
