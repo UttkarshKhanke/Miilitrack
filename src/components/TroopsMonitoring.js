@@ -365,8 +365,8 @@ const TroopsMonitoring = () => {
             <li key={troop.id} className="troop-item">
               <div>
                 <strong>{troop.name}</strong>
-                <span>Active: {troop.active_soldiers}</span>
-                <span>Reserve: {troop.reserve_soldiers}</span>
+                <span>&nbsp; Active: {troop.active_soldiers}</span>
+                <span>&nbsp; Reserve: {troop.reserve_soldiers}</span>
               </div>
               <button onClick={() => deleteTroop(troop.id)}>Delete</button>
             </li>
